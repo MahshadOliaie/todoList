@@ -1,0 +1,16 @@
+.search{
+    position: absolute;
+    top: 30px;
+    right: 110px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
+    width: 170px;
+    height: 35px;
+    padding: 0 20px;
+
+    &:focus-visible{
+        border: none;
+        outline: 2px solid $orange;
+    }
+}
