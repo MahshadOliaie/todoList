@@ -1,0 +1,125 @@
+.tools {
+    width: 20%;
+    height: 85vh;
+    background-color: $white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
+    @include dflex();
+    justify-content: space-between;
+
+
+    &__account {
+        height: 40%;
+        width: 100%;
+        background-color: $cream;
+        @include dflex();
+
+
+        &__image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: $light-orange;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+    }
+
+
+    &__progress {
+        width: 100%;
+        height: 18%;
+        background-color: $blue;
+        @include dflex();
+
+
+        &__title {
+            margin: -15px 0 35px;
+        }
+
+
+        &__percent {
+            align-self: flex-end;
+            margin-right: 13%;
+            font-size: 13px;
+            margin-bottom: 5px;
+
+            &__number {
+                margin-right: 6px;
+            }
+        }
+
+
+        &__diagram {
+            width: 80%;
+            height: 10px;
+            border-radius: 50px;
+            background-color: $light-blue;
+            overflow: hidden;
+
+            &__done {
+                width: 20%;
+                height: 100%;
+                border-radius: 50px;
+                background-color: $light-orange;
+            }
+        }
+    }
+
+    &__themes {
+
+        &__title{
+            margin: -15px 0 35px;
+        }
+
+        &__colors {
+            @include dflex();
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+
+            &__color {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: red;
+            }
+
+        }
+
+    }
+
+    &__backgrounds {
+
+        &__title{
+            margin: -15px 0 35px;
+        }
+
+        &__colors {
+            @include dflex();
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+
+            &__color {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: red;
+            }
+
+        }
+    }
+
+    &__themes,
+    .tools__backgrounds {
+        width: 100%;
+        height: 20%;
+        background-color: $cream;
+        @include dflex();
+
+    }
+
+}
