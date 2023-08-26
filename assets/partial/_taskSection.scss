@@ -115,6 +115,14 @@
             @include dflex();
             flex-direction: row;
             justify-content: flex-start;
+            position: relative;
+
+            & svg{
+                width: 20px;
+                fill: rgba(54, 54, 54, 0.743);
+                position: absolute;
+                right: 20px;
+            }
 
 
             &__check {
@@ -144,4 +152,29 @@
         transform: scale(1.05);
         background-color: $orange;
         transition: 300ms;
+}
+
+.more{
+   width: 60px;
+   height: 60px;
+   background-color: $cream;
+   position: absolute;
+   box-shadow: 1px 1px 1rem rgb(82, 82, 82);
+   right: -35px;
+   top: 20px;
+   padding: 5px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: space-between;
+   z-index: 100;
+   display: none;
+}
+
+.remove , .edit{
+    margin: 0;
+}
+
+.show{
+    display: flex;
 }
