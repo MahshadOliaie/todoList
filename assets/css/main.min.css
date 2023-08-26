@@ -1,6 +1,6 @@
 .tools {
   width: 22%;
-  height: 80vh;
+  height: 78vh;
   background-color: white;
   border-radius: 50px;
   overflow: hidden;
@@ -218,7 +218,7 @@ body {
   -webkit-box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
           box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
   width: 75%;
-  height: 80vh;
+  height: 78vh;
   background-color: white;
   overflow: hidden;
 }
@@ -380,4 +380,47 @@ body {
 .search:focus-visible {
   border: none;
   outline: 2px solid #FC7F00;
+}
+
+.dock {
+  width: 400px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
+          box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
+  position: absolute;
+  bottom: 20px;
+  right: calc(50% - 200px);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.dock__todolist, .dock .dock__notes, .dock .dock__focus {
+  width: 33%;
+  height: 100%;
+  background-color: #E5E9D6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: rgb(42, 42, 42);
+}
+.dock__todolist {
+  background-color: #F69A3F;
+  font-size: 17px;
+  font-weight: 600;
 }/*# sourceMappingURL=main.min.css.map */

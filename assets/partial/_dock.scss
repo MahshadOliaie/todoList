@@ -1,0 +1,34 @@
+
+
+.dock{
+    width: 400px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
+    position: absolute;
+    bottom: 20px;
+    right: calc(50% - 200px);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+
+
+
+    &__todolist , .dock__notes , .dock__focus{
+        width: 33%;
+        height: 100%;
+        background-color: $cream;
+        @include dflex();
+        color: rgb(42, 42, 42);
+
+    }
+
+
+    &__todolist{
+        background-color: $light-orange;
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+}
