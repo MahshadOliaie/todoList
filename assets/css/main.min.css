@@ -92,6 +92,8 @@
   height: 100%;
   border-radius: 50px;
   background-color: #F69A3F;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 .tools__themes__title {
   margin: -15px 0 35px;
@@ -314,6 +316,15 @@ body {
   margin-left: 8px;
   background-color: #F69A3F;
   font-weight: 700;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+.tasks__header__add__addBtn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: #FC7F00;
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 .tasks__body {
   height: 70%;
@@ -356,6 +367,18 @@ body {
 .tasks__body__task__content {
   display: inline-block;
   margin-left: 20px;
+}
+
+.done {
+  background: #7AD9EB;
+}
+
+.addbtnHover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: #FC7F00;
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 
 .appName {
