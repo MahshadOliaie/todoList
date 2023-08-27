@@ -360,8 +360,6 @@ body {
 .tasks__body__task svg {
   width: 20px;
   fill: rgba(54, 54, 54, 0.743);
-  position: absolute;
-  right: 20px;
 }
 .tasks__body__task__check {
   display: inline-block;
@@ -423,6 +421,26 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.svg {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  right: 20px;
 }
 
 .appName {
