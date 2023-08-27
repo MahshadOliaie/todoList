@@ -71,14 +71,12 @@ function addHandler(evt) {
 
 
 
-function remove(index, item) {
-    if (doneTasks.includes(item)) {
-        doneTasks.splice(doneTasks.indexOf(item), 1);
-    }
+function remove(index) {
     tasks.splice(index, 1);
-    percent();
-    debugger
     render();
+    doneTasks = [...document.querySelectorAll(".done")];
+    percent();
+
 
 }
 
