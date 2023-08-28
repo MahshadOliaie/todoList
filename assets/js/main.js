@@ -32,11 +32,15 @@ function add() {
 
 
 
-function done(item) {
+function done(item , index) {
     document.getElementById(`check${item}`).classList.toggle("done");
 
     doneTasks = [...document.querySelectorAll(".done")];
-    doneTasksList = doneTasks;
+    if(doneTasks.includes(document.getElementById(`check${item}`))){
+        doneTasksList.push(item);
+    }else
+    doneTasksList.splice(index , 1);
+    console.log(doneTasksList)
 
     percent();
 }
@@ -86,9 +90,11 @@ function searchHandler() {
 
 
 
-function remove(index) {
+function remove(index , item) {
     tasks.splice(index, 1);
-
+    if(doneTasksList.includes(item)){
+        doneTasksList.splice(doneTasksList.indexOf(item) , 1);
+    }
     render(tasks);
 
     percent();
@@ -112,7 +118,7 @@ function editFn(item , index){
 
 
 function percent() {
-    let percent = ((doneTasks.length) / (tasks.length)) * 100;
+    let percent = ((doneTasksList.length) / (tasks.length)) * 100;
 
     document.querySelector(".tools__progress__diagram__done").style.width = `${percent}%`;
     document.querySelector(".tools__progress__percent__number").textContent = Math.floor(percent) + "%"
@@ -122,13 +128,22 @@ function percent() {
 
 function render(array) {
     let template = array.map((item, index) => {
+        if(doneTasksList.includes(item)){
+            return  `<div class="tasks__body__task"><div class="svg" onclick='moreFN("${index}")'><svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml: space="preserve">
+            <g>
+                <path d="M30,16c4.411,0,8-3.589,8-8s-3.589-8-8-8s-8,3.589-8,8S25.589,16,30,16z"></path>
+                <path d="M30,44c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,44,30,44z"></path>
+                <path d="M30,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,22,30,22z"></path>
+            </g>
+        </svg></div><div class="more" id="more${index}"><p class="edit" onclick='editFn("${item}" , ${index})'>edit</p><p class="remove" onclick='remove(${index},"${item}")'>remove</p></div><div class="tasks__body__task__check done" onclick='done("${item}" , ${index})' id="check${item}"></div><p class="tasks__body__task__content">${item}</p></div>`
+        }else
         return `<div class="tasks__body__task"><div class="svg" onclick='moreFN("${index}")'><svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml: space="preserve">
         <g>
             <path d="M30,16c4.411,0,8-3.589,8-8s-3.589-8-8-8s-8,3.589-8,8S25.589,16,30,16z"></path>
             <path d="M30,44c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,44,30,44z"></path>
             <path d="M30,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,22,30,22z"></path>
         </g>
-    </svg></div><div class="more" id="more${index}"><p class="edit" onclick='editFn("${item}" , ${index})'>edit</p><p class="remove" onclick='remove(${index})'>remove</p></div><div class="tasks__body__task__check" onclick='done("${item}")' id="check${item}"></div><p class="tasks__body__task__content">${item}</p></div>`
+    </svg></div><div class="more" id="more${index}"><p class="edit" onclick='editFn("${item}" , ${index})'>edit</p><p class="remove" onclick='remove(${index},"${item}")'>remove</p></div><div class="tasks__body__task__check" onclick='done("${item}" , ${index})' id="check${item}"></div><p class="tasks__body__task__content">${item}</p></div>`
     }).join("");
 
     root.innerHTML = template;
