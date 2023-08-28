@@ -65,6 +65,12 @@
 
         &__add{
 
+            &__warning{
+                margin: 10px 0  0 20px;
+                color: rgba(255, 0, 0, 0.793);
+               
+            }
+
             &__newTask {
                 border: none;
                 height: 50px;
@@ -171,6 +177,7 @@
 
 .remove , .edit{
     margin: 0;
+    cursor: pointer;
 }
 
 .show{

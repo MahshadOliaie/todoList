@@ -296,6 +296,10 @@ body {
   margin-left: 50px;
   color: #F69A3F;
 }
+.tasks__header__add__warning {
+  margin: 10px 0 0 20px;
+  color: rgba(255, 0, 0, 0.793);
+}
 .tasks__header__add__newTask {
   border: none;
   height: 50px;
@@ -415,6 +419,7 @@ body {
 
 .remove, .edit {
   margin: 0;
+  cursor: pointer;
 }
 
 .show {
