@@ -2,6 +2,7 @@
 
 let doneTasks = [];
 let tasks = [];
+let result =[];
 
 
 
@@ -11,7 +12,7 @@ function add() {
 
     if (newTask.value !== "") {
         tasks.push(newTask.value);
-        render();
+        render(tasks);
         percent();
 
         newTask.value = "";
@@ -66,6 +67,11 @@ function addHandler(evt) {
 
 
 
+function searchHandler(evt) {
+    result = tasks.filter(item => item.includes(search.value))
+    render(result);
+}
+
 
 
 
@@ -73,7 +79,7 @@ function addHandler(evt) {
 
 function remove(index) {
     tasks.splice(index, 1);
-    render();
+    render(tasks);
     doneTasks = [...document.querySelectorAll(".done")];
     percent();
 
@@ -90,8 +96,8 @@ function percent() {
 
 
 
-function render() {
-    let template = tasks.map((item, index) => {
+function render(array) {
+    let template = array.map((item, index) => {
         return `<div class="tasks__body__task"><div class="svg" onclick='moreFN(${index})'><svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml: space="preserve">
         <g>
             <path d="M30,16c4.411,0,8-3.589,8-8s-3.589-8-8-8s-8,3.589-8,8S25.589,16,30,16z"></path>
@@ -110,4 +116,5 @@ function render() {
 
 addBtn.addEventListener("click", add);
 newTask.addEventListener("keyup", addHandler);
+search.addEventListener("keyup", searchHandler);
 
