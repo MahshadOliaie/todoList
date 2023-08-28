@@ -1,5 +1,12 @@
 
 
+//dom nodes
+let addBtn = document.querySelector(".tasks__header__add__addBtn");
+let newTask = document.querySelector(".tasks__header__add__newTask");
+let tasksBox = document.querySelector(".tasks__body");
+let checkbox = [];
+let search = document.querySelector(".search");
+let root = document.querySelector(".tasks__body")
 let doneTasks = [];
 let doneTasksList = []
 let tasks = [];
@@ -7,7 +14,7 @@ let result = [];
 
 
 
-
+//functions
 
 function add() {
 
@@ -155,7 +162,7 @@ function render(array) {
 
 
 
-
+//events
 addBtn.addEventListener("click", add);
 newTask.addEventListener("keyup", addHandler);
 search.addEventListener("keyup", searchHandler);
