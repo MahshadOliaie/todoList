@@ -5,8 +5,13 @@ let addBtn = document.querySelector(".tasks__header__add__addBtn");
 let newTask = document.querySelector(".tasks__header__add__newTask");
 let tasksBox = document.querySelector(".tasks__body");
 let checkbox = [];
+let name = document.querySelector(".tools__account__name");
+let profile = document.querySelector(".tools__account__image")
 let search = document.querySelector(".search");
 let root = document.querySelector(".tasks__body")
+let images = document.querySelectorAll(".chooseProfile__images__img");
+let donebtn = document.querySelector(".donebtn");
+let mainImage = document.querySelector(".chooseProfile__main");
 let doneTasks = [];
 let doneTasksList = []
 let tasks = [];
@@ -162,8 +167,41 @@ function render(array) {
 
 
 
+function editName() {
+    let newName = prompt("Enter your name", "your name");
+    name.textContent = newName;
+}
+
+
+function changeProfile() {
+    document.querySelector(".chooseProfile").classList.add("showProfileBox")
+}
+
+
+function chooseImage() {
+    mainImage.setAttribute("src", this.getAttribute("src"))
+
+}
+
+function change() {
+    document.querySelector(".tools__account__image").style.backgroundImage = `url(${document.querySelector(".chooseProfile__main").getAttribute("src")})`
+    document.querySelector(".chooseProfile").classList.remove("showProfileBox")
+}
+
+
+
 //events
 addBtn.addEventListener("click", add);
 newTask.addEventListener("keyup", addHandler);
 search.addEventListener("keyup", searchHandler);
+name.addEventListener("click", editName);
+profile.addEventListener("click", changeProfile)
+donebtn.addEventListener("click", change)
+
+
+
+
+for (const image of images) {
+    image.addEventListener("click", chooseImage);
+}
 

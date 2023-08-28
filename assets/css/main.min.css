@@ -41,11 +41,19 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.tools__account__name {
+  font-weight: 600;
+  cursor: pointer;
+}
+.tools__account__name:hover {
+  color: gray;
+}
 .tools__account__image {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background-color: #F69A3F;
+  background-image: url(../images/human.jpeg);
+  background-size: cover;
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -171,6 +179,81 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.chooseProfile {
+  position: absolute;
+  width: 500px;
+  height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  z-index: 10000000;
+  -webkit-box-shadow: 1px 1px 6rem black;
+          box-shadow: 1px 1px 6rem black;
+  left: 20%;
+  display: none;
+}
+.chooseProfile__main {
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
+}
+.chooseProfile__images {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.chooseProfile__images img {
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+}
+
+.donebtn {
+  border: none;
+  height: 50px;
+  width: 70px;
+  border-radius: 50px;
+  margin-left: 8px;
+  background-color: #F69A3F;
+  font-weight: 700;
+  margin-top: 30px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+.donebtn:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: #FC7F00;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.showProfileBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 * {
