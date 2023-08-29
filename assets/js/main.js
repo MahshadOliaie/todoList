@@ -16,10 +16,17 @@ let doneTasks = [];
 let doneTasksList = []
 let tasks = [];
 let result = [];
+let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI"];
+let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 
 
 //functions
+
+date();
+
+
+
 
 function add() {
 
@@ -163,6 +170,14 @@ function render(array) {
     root.innerHTML = template;
 
 
+}
+
+
+function date(){
+    let d = new Date();
+    document.getElementById("day").textContent = dayList[d.getDay()];
+    document.querySelector(".tasks__header__date__dayMonth__day").textContent = `${d.getDate()}`;
+    document.querySelector(".tasks__header__date__dayMonth__month").textContent = monthList[d.getMonth()];
 }
 
 
