@@ -16,10 +16,26 @@ let doneTasks = [];
 let doneTasksList = []
 let tasks = [];
 let result = [];
+let deleted = [];
+let deletedDoneTasks = [];
 let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI"];
 let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
-
+let toastify = Toastify({
+    text: "tab to undo",
+    duration: 3000,
+    gravity: "bottom", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    style: {
+        boxShadow: "1px 1px 1.5rem rgba(0, 0, 0, 0.556)",
+        fontWeight: "600",
+        borderRadius: "50px",
+        textAlign: "center",
+        color: "black",
+        width: "200px",
+        background: "linear-gradient(to right, #F69A3F, #E5E9D6)",
+    }, onClick: undo
+})
 
 //functions
 
@@ -109,14 +125,31 @@ function searchHandler() {
 
 
 function remove(index, item) {
+    deleted.push(item);
     tasks.splice(index, 1);
     if (doneTasksList.includes(item)) {
+        deletedDoneTasks.push(item);
         doneTasksList.splice(doneTasksList.indexOf(item), 1);
     }
     render(tasks);
 
     percent();
 
+    toastify.showToast();
+
+
+}
+
+function undo() {
+    let lastElementOfDeleted = deleted[(deleted.length) - 1];
+    tasks.push(lastElementOfDeleted);
+    if (deletedDoneTasks.includes(lastElementOfDeleted)) {
+        doneTasksList.push(lastElementOfDeleted);
+        deletedDoneTasks.pop();
+    }
+    render(tasks);
+
+    percent();
 
 }
 
@@ -124,9 +157,11 @@ function remove(index, item) {
 
 function editFn(item, index) {
     let editedTodo = prompt("edit todo", item);
-    tasks[index] = editedTodo;
-    if (doneTasksList.includes(item)) {
-        doneTasksList[doneTasksList.indexOf(item)] = editedTodo;
+    if (editedTodo !== null) {
+        tasks[index] = editedTodo;
+        if (doneTasksList.includes(item)) {
+            doneTasksList[doneTasksList.indexOf(item)] = editedTodo;
+        }
     }
 
     render(tasks);
@@ -173,7 +208,7 @@ function render(array) {
 }
 
 
-function date(){
+function date() {
     let d = new Date();
     document.getElementById("day").textContent = dayList[d.getDay()];
     document.querySelector(".tasks__header__date__dayMonth__day").textContent = `${d.getDate()}`;
