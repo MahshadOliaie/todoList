@@ -23,6 +23,8 @@ let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", 
 
 let toastify = Toastify({
     text: "tab to undo",
+    close: true,
+    className : "toast",
     duration: 3000,
     gravity: "bottom", // `top` or `bottom`
     position: "right", // `left`, `center` or `right`
@@ -125,7 +127,6 @@ function searchHandler() {
 
 
 function remove(index, item) {
-    document.getElementById(`more${index}`).classList.remove("show");
     deleted.push(item);
     tasks.splice(index, 1);
     if (doneTasksList.includes(item)) {
@@ -151,6 +152,10 @@ function undo() {
     render(tasks);
 
     percent();
+
+    document.querySelector(".toast").style.display = "none";
+
+    
 
 }
 
