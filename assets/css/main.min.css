@@ -22,6 +22,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  color: rgb(47, 47, 47);
 }
 .tools__account {
   height: 40%;
@@ -44,6 +45,7 @@
 .tools__account__name {
   font-weight: 600;
   cursor: pointer;
+  font-size: 18px;
 }
 .tools__account__name:hover {
   color: gray;
@@ -256,6 +258,26 @@
   display: flex;
 }
 
+input::-webkit-input-placeholder {
+  font-family: burger;
+}
+
+input::-moz-placeholder {
+  font-family: burger;
+}
+
+input:-ms-input-placeholder {
+  font-family: burger;
+}
+
+input::-ms-input-placeholder {
+  font-family: burger;
+}
+
+input::placeholder {
+  font-family: burger;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -284,8 +306,13 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: hidden;
+  font-family: burger;
 }
 
+@font-face {
+  font-family: burger;
+  src: url(../font/NewBurger.ttf);
+}
 .tasks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -347,6 +374,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .tasks__header__date__weekDay {
   font-size: 70px;
@@ -531,14 +559,23 @@ body {
   right: 20px;
 }
 
+@font-face {
+  font-family: burger;
+  src: url(../font/NewBurger.ttf);
+}
 .appName {
   position: absolute;
   font-size: 35px;
   top: -10px;
   left: 165px;
   color: #9A9A9A;
+  font-family: baby;
 }
 
+@font-face {
+  font-family: baby;
+  src: url(../font/BabyGirly.ttf);
+}
 .search {
   position: absolute;
   top: 30px;

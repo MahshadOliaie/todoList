@@ -1,7 +1,14 @@
-.appName{
+.appName {
     position: absolute;
     font-size: 35px;
     top: -10px;
     left: 165px;
     color: #9A9A9A;
+    font-family: baby;
+
+}
+
+@font-face {
+    font-family: baby;
+    src: url(../font/BabyGirly.ttf);
 }

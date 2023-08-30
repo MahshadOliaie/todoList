@@ -6,6 +6,7 @@
     height: 78vh;
     background-color: $white;
     overflow: hidden;
+    
 
     &__header {
         width: 100%;
@@ -22,6 +23,7 @@
             height: 90%;
             position: relative;
             @include dflex();
+            font-family: Arial, Helvetica, sans-serif;
 
             &__weekDay{
                 font-size: 70px;
@@ -190,4 +192,10 @@
     @include dflex();
     position: absolute;
     right: 20px;
+}
+
+
+@font-face {
+    font-family: burger;
+    src: url(../font/NewBurger.ttf);
 }
