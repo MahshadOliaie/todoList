@@ -6,6 +6,11 @@
     height: 78vh;
     background-color: $white;
     overflow: hidden;
+
+    
+@media screen and (max-width:900px){
+    width: 100%;
+}
     
 
     &__header {
@@ -26,7 +31,7 @@
             font-family: Arial, Helvetica, sans-serif;
 
             &__weekDay{
-                font-size: 70px;
+                font-size: 4.5rem;
                 font-weight: 700;
                 text-align: center;
                 color: rgba(255, 255, 255, 0.531);
@@ -66,6 +71,9 @@
 
 
         &__add{
+            width: 55%;
+            display: flex;
+            justify-content: space-between;
 
             &__warning{
                 margin: 10px 0  0 20px;
@@ -76,7 +84,7 @@
             &__newTask {
                 border: none;
                 height: 50px;
-                width: 400px;
+                width: 75%;
                 border-radius: 50px;
                 background-color: #D3F8F8;
                 padding: 0 20px;
@@ -90,7 +98,7 @@
             &__addBtn{
                 border: none;
                 height: 50px;
-                width: 70px;
+                width: 25%;
                 border-radius: 50px;
                 margin-left: 8px;
                 background-color: $light-orange;

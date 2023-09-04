@@ -1,12 +1,18 @@
 .appName {
     position: absolute;
     font-size: 35px;
-    top: -10px;
-    left: 165px;
+    top: 0;
+    left: 0;
     color: #9A9A9A;
     font-family: baby;
+    margin: 20px 0 0 170px;
+
+    @media screen and (max-width:900px) {
+        margin: 20px 0 0 200px;
+    }
 
 }
+
 
 @font-face {
     font-family: baby;

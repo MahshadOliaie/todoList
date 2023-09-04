@@ -1,13 +1,14 @@
 .search{
     position: absolute;
-    top: 30px;
-    right: 110px;
+    top: 0;
+    right: 0;
     border: none;
     border-radius: 50px;
     box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
     width: 170px;
     height: 35px;
     padding: 0 20px;
+    margin: 20px 110px 0 0;
 
     &:focus-visible{
         border: none;

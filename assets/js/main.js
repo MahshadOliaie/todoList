@@ -18,6 +18,8 @@ let tasks = [];
 let result = [];
 let deleted = [];
 let deletedDoneTasks = [];
+let closebtn = document.querySelector(".close");
+let bars = document.querySelector(".bars");
 let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI"];
 let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
@@ -248,8 +250,12 @@ search.addEventListener("keyup", searchHandler);
 name.addEventListener("click", editName);
 profile.addEventListener("click", changeProfile)
 donebtn.addEventListener("click", change)
-
-
+bars.addEventListener("click" , function(){
+    document.querySelector(".tools").classList.add("open")
+})
+closebtn.addEventListener("click" , function(){
+    document.querySelector(".tools").classList.remove("open")
+})
 
 
 for (const image of images) {
