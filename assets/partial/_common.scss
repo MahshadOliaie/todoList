@@ -4,7 +4,6 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(100deg, rgb(229, 233, 214), rgb(122, 217, 235));
     @include dflex();
     flex-direction: row;
     justify-content: space-between;

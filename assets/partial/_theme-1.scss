@@ -1,0 +1,158 @@
+.theme-1 {
+
+    //body
+    background: linear-gradient(100deg, rgb(229, 233, 214), rgb(122, 217, 235));
+
+
+    //app name
+    & .appName {
+        color: #9A9A9A;
+    }
+
+
+    //dock
+    & .dock {
+        background-color: white;
+        color: rgb(42, 42, 42);
+
+        &__todolist,
+        &__notes,
+        &__focus {
+            background-color: $cream;
+        }
+
+        &__todolist {
+            background-color: $light-orange;
+        }
+    }
+
+
+
+
+    //search
+    & .search {
+        &:focus-visible {
+            outline: 2px solid $orange;
+        }
+    }
+
+
+    //task section
+    & .tasks {
+        background-color: $white;
+
+        &__header {
+            background-color: $blue;
+
+            &__date {
+                &__weekDay {
+                    color: rgba(255, 255, 255, 0.531);
+                }
+
+                &__dayMonth {
+                    &__day {
+                        color: $orange;
+                    }
+
+                    &__month {
+                        color: $light-orange;
+                    }
+                }
+            }
+
+
+            &__add {
+                &__newTask {
+                    background-color: #D3F8F8;
+
+                    &:focus-visible {
+                        outline: 2px solid $light-orange;
+                    }
+                }
+
+                &__addBtn {
+                    background-color: $light-orange;
+
+                    &:hover {
+                        background-color: $orange;
+                    }
+                }
+
+            }
+
+
+        }
+
+        &__body {
+            &__task {
+                background-color: $cream;
+
+                & svg {
+                    fill: rgba(54, 54, 54, 0.743);
+                }
+
+                &__check {
+                    border-color: $blue;
+                    ;
+                }
+            }
+        }
+
+    }
+
+
+    & .done {
+        background: $blue;
+    }
+
+    & .addbtnHover {
+        background-color: $orange;
+    }
+
+    & .more {
+        background-color: $cream;
+    }
+
+
+    //tools section
+    & .tools {
+        background-color: $white;
+        color: rgb(47, 47, 47);
+
+        &__account {
+            background-color: $cream;
+        }
+
+        &__progress {
+            background-color: $blue;
+
+            &__diagram {
+                background-color: $light-blue;
+
+                &__done {
+                    background-color: $light-orange;
+                }
+            }
+        }
+
+        &__themes,
+        &__backgrounds {
+            background-color: $cream;
+        }
+    }
+
+    & .chooseProfile {
+        background-color: white;
+    }
+
+
+    & .bars {
+        fill: rgb(110, 110, 110);
+    }
+}
+
+
+
+#theme-1{
+    background: linear-gradient(to right ,$blue 20% , $light-blue 20% 40%, $cream 40% 60%, $light-orange 60% 80%,$orange 80%);
+}

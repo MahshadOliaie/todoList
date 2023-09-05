@@ -1,0 +1,166 @@
+.theme-5 {
+
+    //body
+    background: linear-gradient(100deg, rgb(255, 255, 255), $black-5);
+
+
+    //app name
+    & .appName {
+        color: $black-5;
+    }
+
+
+    //dock
+    & .dock {
+        background-color: black;
+        color: $white;
+
+        &__todolist,
+        &__notes,
+        &__focus {
+            background-color: $gray-5;
+        }
+
+        &__todolist {
+            background-color: $dark-gray-5;
+        }
+    }
+
+
+
+
+    //search
+    & .search {
+        &:focus-visible {
+            outline: 2px solid $dark-gray-5;
+        }
+    }
+
+
+    //task section
+    & .tasks {
+        background-color: $gray-5;
+
+        &__header {
+            background-color: $dark-gray-5;
+
+            &__date {
+                &__weekDay {
+                    color: rgba(255, 255, 255, 0.084);
+                }
+
+                &__dayMonth {
+                    &__day {
+                        color: $white;
+                    }
+
+                    &__month {
+                        color: $pink-5;
+                    }
+                }
+            }
+
+
+            &__add {
+                &__newTask {
+                    background-color: $gray-5;
+
+                    &:focus-visible {
+                        outline: 2px solid $white;
+                    }
+                }
+
+                &__addBtn {
+                    background-color: $pink-5;
+                    color: $white;
+
+                    &:hover {
+                        background-color: #871158;
+                    }
+                }
+
+            }
+
+
+        }
+
+        &__body {
+            &__task {
+                background-color: $dark-gray-5;
+                color: $white;
+
+                & svg {
+                    fill: $gray-5;
+                }
+
+                &__check {
+                    border-color: $gray-5;
+                    ;
+                }
+            }
+        }
+
+    }
+
+
+    & .done {
+        background: $gray-5;
+    }
+
+    & .addbtnHover {
+        background-color: #871158;
+    }
+
+
+    //tools section
+    & .tools {
+        background-color: $black-5;
+        color: white;
+
+        &__account {
+            background-color: $gray-5;
+        }
+
+        &__progress {
+            background-color: $dark-gray-5;
+
+            &__diagram {
+                background-color: $gray-5;
+
+                &__done {
+                    background-color: $pink-5;
+                }
+            }
+        }
+
+        &__themes,
+        &__backgrounds {
+            background-color: $gray-5;
+        }
+    }
+
+    & .chooseProfile {
+        background-color: $gray-5;
+    }
+
+
+    & .bars {
+        fill: $black-5;
+    }
+
+
+    & .donebtn {
+        background-color: $pink-5;
+        color: $white;
+
+        &:hover {
+            background-color: #871158;
+        }
+    }
+}
+
+
+
+#theme-5{
+    background: linear-gradient(to right ,$dark-gray-5 20% , $gray-5 20% 40%, $pink-5 40% 60%, $black-5 60% 80%,$white 80%);
+}

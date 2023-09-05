@@ -1,0 +1,163 @@
+.theme-4 {
+
+    //body
+    background: linear-gradient(100deg, rgb(214, 222, 233), $yellow-4);
+
+
+    //app name
+    & .appName {
+        color: $purple-4;
+    }
+
+
+    //dock
+    & .dock {
+        background-color: white;
+        color: rgb(42, 42, 42);
+
+        &__todolist,
+        &__notes,
+        &__focus {
+            background-color: $blue-4;
+        }
+
+        &__todolist {
+            background-color: $pink-4;
+        }
+    }
+
+
+
+
+    //search
+    & .search {
+        &:focus-visible {
+            outline: 2px solid $yellow-4;
+        }
+    }
+
+
+    //task section
+    & .tasks {
+        background-color: $white;
+
+        &__header {
+            background-color: $purple-4;
+
+            &__date {
+                &__weekDay {
+                    color: rgba(255, 255, 255, 0.201);
+                }
+
+                &__dayMonth {
+                    &__day {
+                        color: $yellow-4;
+                    }
+
+                    &__month {
+                        color: $pink-4;
+                    }
+                }
+            }
+
+
+            &__add {
+                &__newTask {
+                    background-color: $yellow-4;
+
+                    &:focus-visible {
+                        outline: 2px solid $yellow-4;
+                    }
+                }
+
+                &__addBtn {
+                    background-color: $pink-4;
+
+                    &:hover {
+                        background-color: #ea8272;
+                    }
+                }
+
+            }
+
+
+        }
+
+        &__body {
+            &__task {
+                background-color: $light-green-4;
+
+                & svg {
+                    fill: $blue-4;
+                }
+
+                &__check {
+                    border-color: $blue-4;
+                    ;
+                }
+            }
+        }
+
+    }
+
+
+    & .done {
+        background: $blue-4;
+    }
+
+    & .addbtnHover {
+        background-color: #ea8272;
+    }
+
+
+    //tools section
+    & .tools {
+        background-color: $white;
+        color: rgb(47, 47, 47);
+
+        &__account {
+            background-color: $light-green-4;
+        }
+
+        &__progress {
+            background-color: $purple-4;
+
+            &__diagram {
+                background-color: $gray-3;
+
+                &__done {
+                    background-color: $pink-4;
+                }
+            }
+        }
+
+        &__themes,
+        &__backgrounds {
+            background-color: $light-green-4;
+        }
+    }
+
+    & .chooseProfile {
+        background-color: $white;
+    }
+
+
+    & .bars {
+        fill: $purple-4;
+    }
+
+
+    & .donebtn {
+        background-color: $pink-4;
+
+        &:hover {
+            background-color: #ea8272;
+        }
+    }
+}
+
+
+
+#theme-4{
+    background: linear-gradient(to right ,$blue-4 20% , $purple-4 20% 40%, $pink-4 40% 60%, $yellow-4 60% 80%,$light-green-4 80%);
+}

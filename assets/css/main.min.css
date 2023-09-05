@@ -2,7 +2,6 @@
   width: 22%;
   min-width: 200px;
   height: 78vh;
-  background-color: white;
   border-radius: 50px;
   overflow: hidden;
   -webkit-box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
@@ -23,7 +22,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: rgb(47, 47, 47);
 }
 @media screen and (max-width: 950px) {
   .tools {
@@ -36,7 +34,6 @@
 .tools__account {
   height: 40%;
   width: 100%;
-  background-color: #E5E9D6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,7 +68,6 @@
 .tools__progress {
   width: 100%;
   height: 18%;
-  background-color: #7AD9EB;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,14 +99,12 @@
   width: 80%;
   height: 10px;
   border-radius: 50px;
-  background-color: #B4E0E0;
   overflow: hidden;
 }
 .tools__progress__diagram__done {
   width: 0.5%;
   height: 100%;
   border-radius: 50px;
-  background-color: #F69A3F;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
@@ -188,7 +182,6 @@
 .tools .tools__backgrounds {
   width: 100%;
   height: 20%;
-  background-color: #E5E9D6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,7 +214,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
   z-index: 10000000;
   -webkit-box-shadow: 1px 1px 6rem black;
           box-shadow: 1px 1px 6rem black;
@@ -333,7 +325,6 @@ input::placeholder {
   left: 110px;
   font-size: 30px;
   display: none;
-  fill: rgb(110, 110, 110);
 }
 @media screen and (max-width: 950px) {
   .bars {
@@ -390,7 +381,6 @@ input::placeholder {
 
 body {
   height: 100vh;
-  background: linear-gradient(100deg, rgb(229, 233, 214), rgb(122, 217, 235));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -449,8 +439,6 @@ body {
           box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
   width: 75%;
   height: 78vh;
-  background-color: white;
-  overflow: hidden;
 }
 @media screen and (max-width: 950px) {
   .tasks {
@@ -460,7 +448,6 @@ body {
 .tasks__header {
   width: 100%;
   height: 30%;
-  background-color: #7AD9EB;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -479,6 +466,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 40px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 @media screen and (max-width: 600px) {
   .tasks__header {
@@ -513,7 +502,6 @@ body {
   font-size: 4.5rem;
   font-weight: 700;
   text-align: center;
-  color: rgba(255, 255, 255, 0.531);
   margin: 0;
   line-height: 1;
 }
@@ -558,7 +546,6 @@ body {
 .tasks__header__date__dayMonth__day {
   margin: 0;
   font-size: 45px;
-  color: #FC7F00;
 }
 @media screen and (max-width: 600px) {
   .tasks__header__date__dayMonth__day {
@@ -574,7 +561,6 @@ body {
   margin: 0;
   font-size: 35px;
   margin-left: 50px;
-  color: #F69A3F;
 }
 @media screen and (max-width: 600px) {
   .tasks__header__date__dayMonth__month {
@@ -614,7 +600,6 @@ body {
   height: 50px;
   width: 75%;
   border-radius: 50px;
-  background-color: #D3F8F8;
   padding: 0 20px;
 }
 @media screen and (max-width: 500px) {
@@ -623,17 +608,12 @@ body {
     font-size: 10px;
   }
 }
-.tasks__header__add__newTask:focus-visible {
-  border: none;
-  outline: 2px solid #F69A3F;
-}
 .tasks__header__add__addBtn {
   border: none;
   height: 50px;
   width: 25%;
   border-radius: 50px;
   margin-left: 8px;
-  background-color: #F69A3F;
   font-weight: 700;
   -webkit-transition: 300ms;
   transition: 300ms;
@@ -648,7 +628,6 @@ body {
 .tasks__header__add__addBtn:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  background-color: #FC7F00;
   -webkit-transition: 300ms;
   transition: 300ms;
 }
@@ -657,6 +636,7 @@ body {
   width: 100%;
   padding: 0 40px;
   overflow-y: scroll;
+  margin-bottom: 5px;
 }
 @media screen and (max-width: 600px) {
   .tasks__body {
@@ -672,7 +652,6 @@ body {
 .tasks__body__task {
   width: 100%;
   height: 50px;
-  background-color: #E5E9D6;
   border-radius: 50px;
   margin: 12px auto;
   display: -webkit-box;
@@ -702,7 +681,6 @@ body {
 }
 .tasks__body__task svg {
   width: 20px;
-  fill: rgba(54, 54, 54, 0.743);
 }
 @media screen and (max-width: 500px) {
   .tasks__body__task svg {
@@ -715,14 +693,14 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 5px solid #7AD9EB;
+  border: 5px solid;
   margin: 5px;
 }
 @media screen and (max-width: 500px) {
   .tasks__body__task__check {
     height: 30px;
     width: 30px;
-    border: 3px solid #7AD9EB;
+    border: 3px solid;
     margin: 2.5px;
   }
 }
@@ -731,14 +709,9 @@ body {
   margin-left: 20px;
 }
 
-.done {
-  background: #7AD9EB;
-}
-
 .addbtnHover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  background-color: #FC7F00;
   -webkit-transition: 300ms;
   transition: 300ms;
 }
@@ -746,7 +719,6 @@ body {
 .more {
   width: 60px;
   height: 60px;
-  background-color: #E5E9D6;
   position: absolute;
   -webkit-box-shadow: 1px 1px 1rem rgb(82, 82, 82);
           box-shadow: 1px 1px 1rem rgb(82, 82, 82);
@@ -767,6 +739,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 100;
+  background-color: inherit;
   display: none;
 }
 
@@ -811,7 +784,6 @@ body {
   font-size: 30px;
   top: 0;
   left: 0;
-  color: #9A9A9A;
   font-family: baby;
   margin: 20px 0 0 170px;
 }
@@ -828,7 +800,7 @@ body {
 }
 @media screen and (max-width: 500px) {
   .appName {
-    display: none;
+    margin-left: 140px;
   }
 }
 
@@ -863,16 +835,11 @@ body {
     font-size: 10px;
   }
 }
-.search:focus-visible {
-  border: none;
-  outline: 2px solid #FC7F00;
-}
 
 .dock {
   width: 400px;
   height: 40px;
   border-radius: 50px;
-  background-color: white;
   -webkit-box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
           box-shadow: 1px 1px 1.5rem rgba(0, 0, 0, 0.556);
   position: absolute;
@@ -903,7 +870,6 @@ body {
 .dock .dock__focus {
   width: 33%;
   height: 100%;
-  background-color: #E5E9D6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -917,8 +883,488 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.theme-1 {
+  background: linear-gradient(100deg, rgb(229, 233, 214), rgb(122, 217, 235));
+}
+.theme-1 .appName {
+  color: #9A9A9A;
+}
+.theme-1 .dock {
+  background-color: white;
   color: rgb(42, 42, 42);
 }
-.dock__todolist {
+.theme-1 .dock__todolist, .theme-1 .dock__notes, .theme-1 .dock__focus {
+  background-color: #E5E9D6;
+}
+.theme-1 .dock__todolist {
   background-color: #F69A3F;
+}
+.theme-1 .search:focus-visible {
+  outline: 2px solid #FC7F00;
+}
+.theme-1 .tasks {
+  background-color: white;
+}
+.theme-1 .tasks__header {
+  background-color: #7AD9EB;
+}
+.theme-1 .tasks__header__date__weekDay {
+  color: rgba(255, 255, 255, 0.531);
+}
+.theme-1 .tasks__header__date__dayMonth__day {
+  color: #FC7F00;
+}
+.theme-1 .tasks__header__date__dayMonth__month {
+  color: #F69A3F;
+}
+.theme-1 .tasks__header__add__newTask {
+  background-color: #D3F8F8;
+}
+.theme-1 .tasks__header__add__newTask:focus-visible {
+  outline: 2px solid #F69A3F;
+}
+.theme-1 .tasks__header__add__addBtn {
+  background-color: #F69A3F;
+}
+.theme-1 .tasks__header__add__addBtn:hover {
+  background-color: #FC7F00;
+}
+.theme-1 .tasks__body__task {
+  background-color: #E5E9D6;
+}
+.theme-1 .tasks__body__task svg {
+  fill: rgba(54, 54, 54, 0.743);
+}
+.theme-1 .tasks__body__task__check {
+  border-color: #7AD9EB;
+}
+.theme-1 .done {
+  background: #7AD9EB;
+}
+.theme-1 .addbtnHover {
+  background-color: #FC7F00;
+}
+.theme-1 .more {
+  background-color: #E5E9D6;
+}
+.theme-1 .tools {
+  background-color: white;
+  color: rgb(47, 47, 47);
+}
+.theme-1 .tools__account {
+  background-color: #E5E9D6;
+}
+.theme-1 .tools__progress {
+  background-color: #7AD9EB;
+}
+.theme-1 .tools__progress__diagram {
+  background-color: #B4E0E0;
+}
+.theme-1 .tools__progress__diagram__done {
+  background-color: #F69A3F;
+}
+.theme-1 .tools__themes, .theme-1 .tools__backgrounds {
+  background-color: #E5E9D6;
+}
+.theme-1 .chooseProfile {
+  background-color: white;
+}
+.theme-1 .bars {
+  fill: rgb(110, 110, 110);
+}
+
+#theme-1 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #7AD9EB), color-stop(20%, #B4E0E0), color-stop(40%, #E5E9D6), color-stop(60%, #F69A3F), color-stop(80%, #FC7F00));
+  background: linear-gradient(to right, #7AD9EB 20%, #B4E0E0 20% 40%, #E5E9D6 40% 60%, #F69A3F 60% 80%, #FC7F00 80%);
+}
+
+.theme-2 {
+  background: linear-gradient(100deg, rgb(214, 222, 233), #2E77AE);
+}
+.theme-2 .appName {
+  color: #0D2137;
+}
+.theme-2 .dock {
+  background-color: white;
+  color: rgb(42, 42, 42);
+}
+.theme-2 .dock__todolist, .theme-2 .dock__notes, .theme-2 .dock__focus {
+  background-color: #E0EAF5;
+}
+.theme-2 .dock__todolist {
+  background-color: #2E77AE;
+}
+.theme-2 .search:focus-visible {
+  outline: 2px solid #0D2137;
+}
+.theme-2 .tasks {
+  background-color: white;
+}
+.theme-2 .tasks__header {
+  background-color: #2E77AE;
+}
+.theme-2 .tasks__header__date__weekDay {
+  color: rgba(255, 255, 255, 0.312);
+}
+.theme-2 .tasks__header__date__dayMonth__day {
+  color: #FF8E2B;
+}
+.theme-2 .tasks__header__date__dayMonth__month {
+  color: #FF8E2B;
+}
+.theme-2 .tasks__header__add__newTask {
+  background-color: #E0EAF5;
+}
+.theme-2 .tasks__header__add__newTask:focus-visible {
+  outline: 2px solid #0D2137;
+}
+.theme-2 .tasks__header__add__addBtn {
+  background-color: #FF8E2B;
+}
+.theme-2 .tasks__header__add__addBtn:hover {
+  background-color: #FC7F00;
+}
+.theme-2 .tasks__body__task {
+  background-color: #E0EAF5;
+}
+.theme-2 .tasks__body__task svg {
+  fill: #0D2137;
+}
+.theme-2 .tasks__body__task__check {
+  border-color: #2E77AE;
+}
+.theme-2 .done {
+  background: #2E77AE;
+}
+.theme-2 .addbtnHover {
+  background-color: #FC7F00;
+}
+.theme-2 .tools {
+  background-color: white;
+  color: rgb(47, 47, 47);
+}
+.theme-2 .tools__account {
+  background-color: #E0EAF5;
+}
+.theme-2 .tools__progress {
+  background-color: #2E77AE;
+}
+.theme-2 .tools__progress__diagram {
+  background-color: #E0EAF5;
+}
+.theme-2 .tools__progress__diagram__done {
+  background-color: #FF8E2B;
+}
+.theme-2 .tools__themes, .theme-2 .tools__backgrounds {
+  background-color: #E0EAF5;
+}
+.theme-2 .chooseProfile {
+  background-color: #E0EAF5;
+}
+.theme-2 .bars {
+  fill: #0D2137;
+}
+
+#theme-2 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #0D2137), color-stop(20%, #2E77AE), color-stop(40%, #E0EAF5), color-stop(60%, white), color-stop(80%, #FF8E2B));
+  background: linear-gradient(to right, #0D2137 20%, #2E77AE 20% 40%, #E0EAF5 40% 60%, white 60% 80%, #FF8E2B 80%);
+}
+
+.theme-3 {
+  background: linear-gradient(100deg, rgb(214, 222, 233), #C8D3D5);
+}
+.theme-3 .appName {
+  color: #6E8387;
+}
+.theme-3 .dock {
+  background-color: white;
+  color: rgb(42, 42, 42);
+}
+.theme-3 .dock__todolist, .theme-3 .dock__notes, .theme-3 .dock__focus {
+  background-color: #A4B8C4;
+}
+.theme-3 .dock__todolist {
+  background-color: #0CCA4A;
+}
+.theme-3 .search:focus-visible {
+  outline: 2px solid #6E8387;
+}
+.theme-3 .tasks {
+  background-color: white;
+}
+.theme-3 .tasks__header {
+  background-color: #6E8387;
+}
+.theme-3 .tasks__header__date__weekDay {
+  color: rgba(255, 255, 255, 0.201);
+}
+.theme-3 .tasks__header__date__dayMonth__day {
+  color: #0CCA4A;
+}
+.theme-3 .tasks__header__date__dayMonth__month {
+  color: #0CCA4A;
+}
+.theme-3 .tasks__header__add__newTask {
+  background-color: #C8D3D5;
+}
+.theme-3 .tasks__header__add__newTask:focus-visible {
+  outline: 2px solid #6E8387;
+}
+.theme-3 .tasks__header__add__addBtn {
+  background-color: #0CCA4A;
+}
+.theme-3 .tasks__header__add__addBtn:hover {
+  background-color: rgb(0, 174, 0);
+}
+.theme-3 .tasks__body__task {
+  background-color: #C8D3D5;
+}
+.theme-3 .tasks__body__task svg {
+  fill: #6E8387;
+}
+.theme-3 .tasks__body__task__check {
+  border-color: #A4B8C4;
+}
+.theme-3 .done {
+  background: #A4B8C4;
+}
+.theme-3 .addbtnHover {
+  background-color: rgb(0, 174, 0);
+}
+.theme-3 .tools {
+  background-color: white;
+  color: rgb(47, 47, 47);
+}
+.theme-3 .tools__account {
+  background-color: #C8D3D5;
+}
+.theme-3 .tools__progress {
+  background-color: #6E8387;
+}
+.theme-3 .tools__progress__diagram {
+  background-color: #C8D3D5;
+}
+.theme-3 .tools__progress__diagram__done {
+  background-color: #0CCA4A;
+}
+.theme-3 .tools__themes, .theme-3 .tools__backgrounds {
+  background-color: #C8D3D5;
+}
+.theme-3 .chooseProfile {
+  background-color: #C8D3D5;
+}
+.theme-3 .bars {
+  fill: #0D2137;
+}
+.theme-3 .donebtn {
+  background-color: #0CCA4A;
+}
+.theme-3 .donebtn:hover {
+  background-color: rgb(0, 174, 0);
+}
+
+#theme-3 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #0CCA4A), color-stop(20%, #C8D3D5), color-stop(40%, #A4B8C4), color-stop(60%, white), color-stop(80%, #6E8387));
+  background: linear-gradient(to right, #0CCA4A 20%, #C8D3D5 20% 40%, #A4B8C4 40% 60%, white 60% 80%, #6E8387 80%);
+}
+
+.theme-4 {
+  background: linear-gradient(100deg, rgb(214, 222, 233), #F3DE8A);
+}
+.theme-4 .appName {
+  color: #7A7A94;
+}
+.theme-4 .dock {
+  background-color: white;
+  color: rgb(42, 42, 42);
+}
+.theme-4 .dock__todolist, .theme-4 .dock__notes, .theme-4 .dock__focus {
+  background-color: #909FAB;
+}
+.theme-4 .dock__todolist {
+  background-color: #EB9486;
+}
+.theme-4 .search:focus-visible {
+  outline: 2px solid #F3DE8A;
+}
+.theme-4 .tasks {
+  background-color: white;
+}
+.theme-4 .tasks__header {
+  background-color: #7A7A94;
+}
+.theme-4 .tasks__header__date__weekDay {
+  color: rgba(255, 255, 255, 0.201);
+}
+.theme-4 .tasks__header__date__dayMonth__day {
+  color: #F3DE8A;
+}
+.theme-4 .tasks__header__date__dayMonth__month {
+  color: #EB9486;
+}
+.theme-4 .tasks__header__add__newTask {
+  background-color: #F3DE8A;
+}
+.theme-4 .tasks__header__add__newTask:focus-visible {
+  outline: 2px solid #F3DE8A;
+}
+.theme-4 .tasks__header__add__addBtn {
+  background-color: #EB9486;
+}
+.theme-4 .tasks__header__add__addBtn:hover {
+  background-color: #ea8272;
+}
+.theme-4 .tasks__body__task {
+  background-color: #CAE7B9;
+}
+.theme-4 .tasks__body__task svg {
+  fill: #909FAB;
+}
+.theme-4 .tasks__body__task__check {
+  border-color: #909FAB;
+}
+.theme-4 .done {
+  background: #909FAB;
+}
+.theme-4 .addbtnHover {
+  background-color: #ea8272;
+}
+.theme-4 .tools {
+  background-color: white;
+  color: rgb(47, 47, 47);
+}
+.theme-4 .tools__account {
+  background-color: #CAE7B9;
+}
+.theme-4 .tools__progress {
+  background-color: #7A7A94;
+}
+.theme-4 .tools__progress__diagram {
+  background-color: #C8D3D5;
+}
+.theme-4 .tools__progress__diagram__done {
+  background-color: #EB9486;
+}
+.theme-4 .tools__themes, .theme-4 .tools__backgrounds {
+  background-color: #CAE7B9;
+}
+.theme-4 .chooseProfile {
+  background-color: white;
+}
+.theme-4 .bars {
+  fill: #7A7A94;
+}
+.theme-4 .donebtn {
+  background-color: #EB9486;
+}
+.theme-4 .donebtn:hover {
+  background-color: #ea8272;
+}
+
+#theme-4 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #909FAB), color-stop(20%, #7A7A94), color-stop(40%, #EB9486), color-stop(60%, #F3DE8A), color-stop(80%, #CAE7B9));
+  background: linear-gradient(to right, #909FAB 20%, #7A7A94 20% 40%, #EB9486 40% 60%, #F3DE8A 60% 80%, #CAE7B9 80%);
+}
+
+.theme-5 {
+  background: linear-gradient(100deg, rgb(255, 255, 255), #000000);
+}
+.theme-5 .appName {
+  color: #000000;
+}
+.theme-5 .dock {
+  background-color: black;
+  color: white;
+}
+.theme-5 .dock__todolist, .theme-5 .dock__notes, .theme-5 .dock__focus {
+  background-color: #ababab;
+}
+.theme-5 .dock__todolist {
+  background-color: #2d2d2d;
+}
+.theme-5 .search:focus-visible {
+  outline: 2px solid #2d2d2d;
+}
+.theme-5 .tasks {
+  background-color: #ababab;
+}
+.theme-5 .tasks__header {
+  background-color: #2d2d2d;
+}
+.theme-5 .tasks__header__date__weekDay {
+  color: rgba(255, 255, 255, 0.084);
+}
+.theme-5 .tasks__header__date__dayMonth__day {
+  color: white;
+}
+.theme-5 .tasks__header__date__dayMonth__month {
+  color: #8d2663;
+}
+.theme-5 .tasks__header__add__newTask {
+  background-color: #ababab;
+}
+.theme-5 .tasks__header__add__newTask:focus-visible {
+  outline: 2px solid white;
+}
+.theme-5 .tasks__header__add__addBtn {
+  background-color: #8d2663;
+  color: white;
+}
+.theme-5 .tasks__header__add__addBtn:hover {
+  background-color: #871158;
+}
+.theme-5 .tasks__body__task {
+  background-color: #2d2d2d;
+  color: white;
+}
+.theme-5 .tasks__body__task svg {
+  fill: #ababab;
+}
+.theme-5 .tasks__body__task__check {
+  border-color: #ababab;
+}
+.theme-5 .done {
+  background: #ababab;
+}
+.theme-5 .addbtnHover {
+  background-color: #871158;
+}
+.theme-5 .tools {
+  background-color: #000000;
+  color: white;
+}
+.theme-5 .tools__account {
+  background-color: #ababab;
+}
+.theme-5 .tools__progress {
+  background-color: #2d2d2d;
+}
+.theme-5 .tools__progress__diagram {
+  background-color: #ababab;
+}
+.theme-5 .tools__progress__diagram__done {
+  background-color: #8d2663;
+}
+.theme-5 .tools__themes, .theme-5 .tools__backgrounds {
+  background-color: #ababab;
+}
+.theme-5 .chooseProfile {
+  background-color: #ababab;
+}
+.theme-5 .bars {
+  fill: #000000;
+}
+.theme-5 .donebtn {
+  background-color: #8d2663;
+  color: white;
+}
+.theme-5 .donebtn:hover {
+  background-color: #871158;
+}
+
+#theme-5 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #2d2d2d), color-stop(20%, #ababab), color-stop(40%, #8d2663), color-stop(60%, #000000), color-stop(80%, white));
+  background: linear-gradient(to right, #2d2d2d 20%, #ababab 20% 40%, #8d2663 40% 60%, #000000 60% 80%, white 80%);
 }/*# sourceMappingURL=main.min.css.map */
