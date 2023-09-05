@@ -1,6 +1,6 @@
 .appName {
     position: absolute;
-    font-size: 35px;
+    font-size: 30px;
     top: 0;
     left: 0;
     color: #9A9A9A;
@@ -11,6 +11,14 @@
         margin: 20px 0 0 200px;
     }
 
+    @media screen and (max-width:700px) {
+        font-size: 20px;
+        margin: 25px 0 0 160px;
+    }
+
+    @media screen and (max-width:500px) {
+        display: none;
+    }
 }
 
 

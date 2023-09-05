@@ -143,6 +143,12 @@
   border-radius: 50%;
   background-color: red;
 }
+@media screen and (max-width: 700px) {
+  .tools__themes__colors__color {
+    width: 30px;
+    height: 30px;
+  }
+}
 .tools__backgrounds__title {
   margin: -15px 0 35px;
 }
@@ -171,6 +177,12 @@
   height: 35px;
   border-radius: 50%;
   background-color: red;
+}
+@media screen and (max-width: 700px) {
+  .tools__backgrounds__colors__color {
+    width: 30px;
+    height: 30px;
+  }
 }
 .tools__themes,
 .tools .tools__backgrounds {
@@ -216,10 +228,22 @@
   left: 20%;
   display: none;
 }
+@media screen and (max-width: 500px) {
+  .chooseProfile {
+    width: 70%;
+    height: 350px;
+  }
+}
 .chooseProfile__main {
   width: 200px;
   height: 200px;
   margin: 20px 0;
+}
+@media screen and (max-width: 500px) {
+  .chooseProfile__main {
+    width: 150px;
+    height: 150px;
+  }
 }
 .chooseProfile__images {
   width: 100%;
@@ -235,10 +259,20 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media screen and (max-width: 500px) {
+  .chooseProfile__images {
+    height: 80px;
+  }
+}
 .chooseProfile__images img {
   width: 100%;
   height: 100%;
   margin: 20px;
+}
+@media screen and (max-width: 500px) {
+  .chooseProfile__images img {
+    margin: 10px;
+  }
 }
 
 .donebtn {
@@ -252,6 +286,12 @@
   margin-top: 30px;
   -webkit-transition: 300ms;
   transition: 300ms;
+}
+@media screen and (max-width: 500px) {
+  .donebtn {
+    height: 35px;
+    font-size: 14px;
+  }
 }
 .donebtn:hover {
   -webkit-transform: scale(1.05);
@@ -289,7 +329,7 @@ input::placeholder {
 
 .bars {
   position: absolute;
-  top: 30px;
+  top: 25px;
   left: 110px;
   font-size: 30px;
   display: none;
@@ -298,6 +338,22 @@ input::placeholder {
 @media screen and (max-width: 950px) {
   .bars {
     display: inline-block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bars {
+    left: 70px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .bars {
+    left: 65px;
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .bars {
+    font-size: 25px;
   }
 }
 
@@ -356,12 +412,17 @@ body {
   font-family: burger;
   margin: 0 100px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     margin: 0 80px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body {
+    margin: 0 40px;
   }
 }
 
@@ -419,6 +480,17 @@ body {
           justify-content: space-between;
   padding: 0 40px;
 }
+@media screen and (max-width: 600px) {
+  .tasks__header {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tasks__header {
+    padding: 0 20px;
+    height: 22%;
+  }
+}
 .tasks__header__date {
   height: 90%;
   position: relative;
@@ -445,8 +517,28 @@ body {
   margin: 0;
   line-height: 1;
 }
+@media screen and (max-width: 600px) {
+  .tasks__header__date__weekDay {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tasks__header__date__weekDay {
+    font-size: 2.5rem;
+  }
+}
 .tasks__header__date__weekDay span {
   font-size: 60px;
+}
+@media screen and (max-width: 600px) {
+  .tasks__header__date__weekDay span {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tasks__header__date__weekDay span {
+    font-size: 30px;
+  }
 }
 .tasks__header__date__dayMonth {
   position: absolute;
@@ -457,10 +549,26 @@ body {
   font-weight: 700;
   line-height: 0.9;
 }
+@media screen and (max-width: 500px) {
+  .tasks__header__date__dayMonth {
+    right: -10px;
+    top: 40%;
+  }
+}
 .tasks__header__date__dayMonth__day {
   margin: 0;
   font-size: 45px;
   color: #FC7F00;
+}
+@media screen and (max-width: 600px) {
+  .tasks__header__date__dayMonth__day {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tasks__header__date__dayMonth__day {
+    font-size: 20px;
+  }
 }
 .tasks__header__date__dayMonth__month {
   margin: 0;
@@ -468,14 +576,34 @@ body {
   margin-left: 50px;
   color: #F69A3F;
 }
+@media screen and (max-width: 600px) {
+  .tasks__header__date__dayMonth__month {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tasks__header__date__dayMonth__month {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+}
 .tasks__header__add {
   width: 55%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.tasks__header__add div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .tasks__header__add__warning {
   margin: 10px 0 0 20px;
@@ -488,6 +616,12 @@ body {
   border-radius: 50px;
   background-color: #D3F8F8;
   padding: 0 20px;
+}
+@media screen and (max-width: 500px) {
+  .tasks__header__add__newTask {
+    height: 35px;
+    font-size: 10px;
+  }
 }
 .tasks__header__add__newTask:focus-visible {
   border: none;
@@ -504,6 +638,13 @@ body {
   -webkit-transition: 300ms;
   transition: 300ms;
 }
+@media screen and (max-width: 500px) {
+  .tasks__header__add__addBtn {
+    height: 35px;
+    font-size: 10px;
+    margin-left: 4px;
+  }
+}
 .tasks__header__add__addBtn:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -516,6 +657,17 @@ body {
   width: 100%;
   padding: 0 40px;
   overflow-y: scroll;
+}
+@media screen and (max-width: 600px) {
+  .tasks__body {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tasks__body {
+    padding: 0 20px;
+    height: 78%;
+  }
 }
 .tasks__body__task {
   width: 100%;
@@ -542,9 +694,21 @@ body {
           justify-content: flex-start;
   position: relative;
 }
+@media screen and (max-width: 500px) {
+  .tasks__body__task {
+    height: 35px;
+    font-size: 16px;
+  }
+}
 .tasks__body__task svg {
   width: 20px;
   fill: rgba(54, 54, 54, 0.743);
+}
+@media screen and (max-width: 500px) {
+  .tasks__body__task svg {
+    width: 15px;
+    margin-left: 30px;
+  }
 }
 .tasks__body__task__check {
   display: inline-block;
@@ -553,6 +717,14 @@ body {
   border-radius: 50%;
   border: 5px solid #7AD9EB;
   margin: 5px;
+}
+@media screen and (max-width: 500px) {
+  .tasks__body__task__check {
+    height: 30px;
+    width: 30px;
+    border: 3px solid #7AD9EB;
+    margin: 2.5px;
+  }
 }
 .tasks__body__task__content {
   display: inline-block;
@@ -598,7 +770,8 @@ body {
   display: none;
 }
 
-.remove, .edit {
+.remove,
+.edit {
   margin: 0;
   cursor: pointer;
 }
@@ -635,7 +808,7 @@ body {
 }
 .appName {
   position: absolute;
-  font-size: 35px;
+  font-size: 30px;
   top: 0;
   left: 0;
   color: #9A9A9A;
@@ -645,6 +818,17 @@ body {
 @media screen and (max-width: 950px) {
   .appName {
     margin: 20px 0 0 200px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .appName {
+    font-size: 20px;
+    margin: 25px 0 0 160px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .appName {
+    display: none;
   }
 }
 
@@ -664,6 +848,20 @@ body {
   height: 35px;
   padding: 0 20px;
   margin: 20px 110px 0 0;
+}
+@media screen and (max-width: 600px) {
+  .search {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .search {
+    padding: 0 15px;
+    width: 25%;
+    height: 25px;
+    margin-top: 25px;
+    font-size: 10px;
+  }
 }
 .search:focus-visible {
   border: none;
@@ -688,7 +886,21 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.dock__todolist, .dock .dock__notes, .dock .dock__focus {
+@media screen and (max-width: 600px) {
+  .dock {
+    width: 60%;
+    right: 20%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .dock {
+    height: 35px;
+    font-size: 15px;
+  }
+}
+.dock__todolist,
+.dock .dock__notes,
+.dock .dock__focus {
   width: 33%;
   height: 100%;
   background-color: #E5E9D6;
@@ -709,6 +921,4 @@ body {
 }
 .dock__todolist {
   background-color: #F69A3F;
-  font-size: 17px;
-  font-weight: 600;
 }/*# sourceMappingURL=main.min.css.map */

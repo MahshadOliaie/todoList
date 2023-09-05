@@ -10,6 +10,18 @@
     padding: 0 20px;
     margin: 20px 110px 0 0;
 
+    @media screen and (max-width:600px) {
+        margin-right: 50px;
+      }
+
+      @media screen and (max-width:500px) {
+        padding: 0 15px;
+        width: 25%;
+        height: 25px;
+        margin-top: 25px;
+        font-size: 10px;
+    }
+
     &:focus-visible{
         border: none;
         outline: 2px solid $orange;

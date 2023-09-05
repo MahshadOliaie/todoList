@@ -1,6 +1,4 @@
-
-
-.dock{
+.dock {
     width: 400px;
     height: 40px;
     border-radius: 50px;
@@ -14,8 +12,19 @@
     justify-content: space-between;
 
 
+    @media screen and (max-width:600px) {
+        width: 60%;
+        right: 20%;
+    }
+    @media screen and (max-width:500px) {
+        height: 35px;
+        font-size: 15px;
+    }
 
-    &__todolist , .dock__notes , .dock__focus{
+
+    &__todolist,
+    .dock__notes,
+    .dock__focus {
         width: 33%;
         height: 100%;
         background-color: $cream;
@@ -25,10 +34,8 @@
     }
 
 
-    &__todolist{
+    &__todolist {
         background-color: $light-orange;
-        font-size: 17px;
-        font-weight: 600;
     }
 
 }

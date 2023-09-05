@@ -7,11 +7,11 @@
     background-color: $white;
     overflow: hidden;
 
-    
-@media screen and (max-width:950px){
-    width: 100%;
-}
-    
+
+    @media screen and (max-width:950px) {
+        width: 100%;
+    }
+
 
     &__header {
         width: 100%;
@@ -22,15 +22,25 @@
         justify-content: space-between;
         padding: 0 40px;
 
+        @media screen and (max-width:600px) {
+            padding: 0 30px;
+        }
+
+        @media screen and (max-width:500px) {
+            padding: 0 20px;
+            height: 22%;
+        }
 
 
-        &__date{
+
+        &__date {
             height: 90%;
             position: relative;
             @include dflex();
             font-family: Arial, Helvetica, sans-serif;
 
-            &__weekDay{
+
+            &__weekDay {
                 font-size: 4.5rem;
                 font-weight: 700;
                 text-align: center;
@@ -38,13 +48,30 @@
                 margin: 0;
                 line-height: 1;
 
-                & span{
+                @media screen and (max-width:600px) {
+                    font-size: 4rem;
+                }
+
+                @media screen and (max-width:500px) {
+                    font-size: 2.5rem;
+                }
+
+
+                & span {
                     font-size: 60px;
+
+                    @media screen and (max-width:600px) {
+                        font-size: 50px;
+                    }
+
+                    @media screen and (max-width:500px) {
+                        font-size: 30px;
+                    }
                 }
             }
 
 
-            &__dayMonth{
+            &__dayMonth {
                 position: absolute;
                 z-index: 100;
                 right: -30px;
@@ -53,32 +80,59 @@
                 font-weight: 700;
                 line-height: .9;
 
-                &__day{
+                @media screen and (max-width:500px) {
+                    right: -10px;
+                    top: 40%;
+                }
+
+                &__day {
                     margin: 0;
                     font-size: 45px;
                     color: $orange;
+
+                    @media screen and (max-width:600px) {
+                        font-size: 35px;
+                    }
+
+                    @media screen and (max-width:500px) {
+                        font-size: 20px;
+                    }
                 }
 
-                &__month{
+                &__month {
                     margin: 0;
                     font-size: 35px;
                     margin-left: 50px;
                     color: $light-orange;
+
+                    @media screen and (max-width:600px) {
+                        font-size: 25px;
+                    }
+
+                    @media screen and (max-width:500px) {
+                        font-size: 16px;
+                        margin-left: 20px;
+                    }
                 }
             }
 
         }
 
 
-        &__add{
+        &__add {
             width: 55%;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
 
-            &__warning{
-                margin: 10px 0  0 20px;
+            & div {
+                display: flex;
+                align-items: center;
+            }
+
+            &__warning {
+                margin: 10px 0 0 20px;
                 color: rgba(255, 0, 0, 0.793);
-               
+
             }
 
             &__newTask {
@@ -89,13 +143,18 @@
                 background-color: #D3F8F8;
                 padding: 0 20px;
 
-                &:focus-visible{
+                @media screen and (max-width:500px) {
+                    height: 35px;
+                    font-size: 10px;
+                }
+
+                &:focus-visible {
                     border: none;
                     outline: 2px solid $light-orange;
                 }
             }
 
-            &__addBtn{
+            &__addBtn {
                 border: none;
                 height: 50px;
                 width: 25%;
@@ -105,7 +164,13 @@
                 font-weight: 700;
                 transition: 300ms;
 
-                &:hover{
+                @media screen and (max-width:500px) {
+                    height: 35px;
+                    font-size: 10px;
+                    margin-left: 4px;
+                }
+
+                &:hover {
                     transform: scale(1.05);
                     background-color: $orange;
                     transition: 300ms;
@@ -121,6 +186,16 @@
         padding: 0 40px;
         overflow-y: scroll;
 
+        @media screen and (max-width:600px) {
+            padding: 0 30px;
+        }
+
+        @media screen and (max-width:500px) {
+            padding: 0 20px;
+            height: 78%;
+        }
+
+
 
         &__task {
             width: 100%;
@@ -132,10 +207,19 @@
             flex-direction: row;
             justify-content: flex-start;
             position: relative;
+            @media screen and (max-width:500px) {
+                height: 35px;
+                font-size: 16px;
+            }
 
-            & svg{
+            & svg {
                 width: 20px;
                 fill: rgba(54, 54, 54, 0.743);
+
+                @media screen and (max-width:500px) {
+                    width: 15px;
+                    margin-left: 30px;
+                }
             }
 
 
@@ -146,6 +230,13 @@
                 border-radius: 50%;
                 border: 5px solid $blue;
                 margin: 5px;
+
+                @media screen and (max-width:500px) {
+                    height: 30px;
+                    width: 30px;
+                    border: 3px solid $blue;
+                    margin: 2.5px;
+                }
             }
 
 
@@ -158,43 +249,44 @@
 }
 
 
-.done{
+.done {
     background: $blue;
 }
 
-.addbtnHover{
-        transform: scale(1.05);
-        background-color: $orange;
-        transition: 300ms;
+.addbtnHover {
+    transform: scale(1.05);
+    background-color: $orange;
+    transition: 300ms;
 }
 
-.more{
-   width: 60px;
-   height: 60px;
-   background-color: $cream;
-   position: absolute;
-   box-shadow: 1px 1px 1rem rgb(82, 82, 82);
-   right: -35px;
-   top: 20px;
-   padding: 5px;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   justify-content: space-between;
-   z-index: 100;
-   display: none;
+.more {
+    width: 60px;
+    height: 60px;
+    background-color: $cream;
+    position: absolute;
+    box-shadow: 1px 1px 1rem rgb(82, 82, 82);
+    right: -35px;
+    top: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    z-index: 100;
+    display: none;
 }
 
-.remove , .edit{
+.remove,
+.edit {
     margin: 0;
     cursor: pointer;
 }
 
-.show{
+.show {
     display: flex;
 }
 
-.svg{
+.svg {
     width: 30px;
     height: 30px;
     @include dflex();
