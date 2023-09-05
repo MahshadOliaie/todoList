@@ -255,6 +255,8 @@ bars.addEventListener("click" , function(){
 })
 closebtn.addEventListener("click" , function(){
     document.querySelector(".tools").classList.remove("open")
+    document.querySelector(".chooseProfile").classList.remove("showProfileBox")
+    
 })
 
 

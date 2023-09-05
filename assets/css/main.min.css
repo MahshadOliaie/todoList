@@ -356,7 +356,7 @@ input::placeholder {
     position: absolute;
     left: 50px;
     height: 93%;
-    width: 35%;
+    width: 40%;
     z-index: 1000;
     -webkit-box-shadow: 2px 2px 10rem;
             box-shadow: 2px 2px 10rem;
@@ -511,7 +511,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .tasks__header__date__weekDay {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -520,11 +520,11 @@ body {
   }
 }
 .tasks__header__date__weekDay span {
-  font-size: 60px;
+  font-size: 55px;
 }
 @media screen and (max-width: 600px) {
   .tasks__header__date__weekDay span {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -540,6 +540,12 @@ body {
   top: 33%;
   font-weight: 700;
   line-height: 0.9;
+}
+@media screen and (max-width: 600px) {
+  .tasks__header__date__dayMonth {
+    right: -15px;
+    top: 42%;
+  }
 }
 @media screen and (max-width: 500px) {
   .tasks__header__date__dayMonth {
@@ -804,7 +810,7 @@ body {
 }
 @media screen and (max-width: 500px) {
   .appName {
-    margin-left: 140px;
+    margin-left: 120px;
   }
 }
 
