@@ -154,6 +154,26 @@
             background-color: #ea8272;
         }
     }
+
+    #bg-1 {
+        background: linear-gradient(100deg, rgb(214, 222, 233), $yellow-4);
+    }
+
+    #bg-2 {
+        background: linear-gradient(100deg, rgb(214, 222, 233), $pink-4);
+    }
+
+    #bg-3 {
+        background: linear-gradient(100deg, rgb(214, 222, 233), $purple-4);
+    }
+
+    #bg-4 {
+        background: linear-gradient(100deg, rgb(214, 222, 233), $light-green-4);
+    }
+
+    #bg-5 {
+        background: linear-gradient(100deg, rgb(214, 222, 233), $blue-4);
+    }
 }
 
 
