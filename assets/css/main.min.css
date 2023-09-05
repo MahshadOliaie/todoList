@@ -374,6 +374,10 @@ input::placeholder {
   }
 }
 
+.current {
+  outline: 2px solid rgba(0, 0, 0, 0.355);
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
