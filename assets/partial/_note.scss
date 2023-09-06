@@ -12,3 +12,37 @@
     }
 
 }
+
+.notesList{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+    background-color: white;
+    overflow: scroll;
+
+    &__header{
+        width: 100%;
+        height: 60px;
+        background-color: gray;
+        position: sticky;
+        top: 0;
+    }
+
+    &__body{
+        margin-bottom: 5px;
+
+        &__note{
+            margin: 0 auto;
+            width: 90%;
+            height: 60px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.389);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+    }
+    
+}
