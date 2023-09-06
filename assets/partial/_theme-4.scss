@@ -21,7 +21,7 @@
             background-color: $blue-4;
         }
 
-        &__todolist {
+        & .selected {
             background-color: $pink-4;
         }
     }

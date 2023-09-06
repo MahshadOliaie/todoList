@@ -264,3 +264,6 @@ for (const image of images) {
     image.addEventListener("click", chooseImage);
 }
 
+
+
+

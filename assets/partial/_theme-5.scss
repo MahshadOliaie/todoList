@@ -21,7 +21,7 @@
             background-color: $gray-5;
         }
 
-        &__todolist {
+        & .selected {
             background-color: $dark-gray-5;
         }
     }

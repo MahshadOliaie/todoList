@@ -893,6 +893,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  cursor: pointer;
 }
 
 .theme-1 {
@@ -908,7 +909,7 @@ body {
 .theme-1 .dock__todolist, .theme-1 .dock__notes, .theme-1 .dock__focus {
   background-color: #E5E9D6;
 }
-.theme-1 .dock__todolist {
+.theme-1 .dock .selected {
   background-color: #F69A3F;
 }
 .theme-1 .search:focus-visible {
@@ -1018,7 +1019,7 @@ body {
 .theme-2 .dock__todolist, .theme-2 .dock__notes, .theme-2 .dock__focus {
   background-color: #E0EAF5;
 }
-.theme-2 .dock__todolist {
+.theme-2 .dock .selected {
   background-color: #2E77AE;
 }
 .theme-2 .search:focus-visible {
@@ -1125,7 +1126,7 @@ body {
 .theme-3 .dock__todolist, .theme-3 .dock__notes, .theme-3 .dock__focus {
   background-color: #A4B8C4;
 }
-.theme-3 .dock__todolist {
+.theme-3 .dock .selected {
   background-color: #0CCA4A;
 }
 .theme-3 .search:focus-visible {
@@ -1238,7 +1239,7 @@ body {
 .theme-4 .dock__todolist, .theme-4 .dock__notes, .theme-4 .dock__focus {
   background-color: #909FAB;
 }
-.theme-4 .dock__todolist {
+.theme-4 .dock .selected {
   background-color: #EB9486;
 }
 .theme-4 .search:focus-visible {
@@ -1351,7 +1352,7 @@ body {
 .theme-5 .dock__todolist, .theme-5 .dock__notes, .theme-5 .dock__focus {
   background-color: #ababab;
 }
-.theme-5 .dock__todolist {
+.theme-5 .dock .selected {
   background-color: #2d2d2d;
 }
 .theme-5 .search:focus-visible {
@@ -1452,4 +1453,16 @@ body {
 #theme-5 {
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, #2d2d2d), color-stop(20%, #ababab), color-stop(40%, #8d2663), color-stop(60%, #000000), color-stop(80%, white));
   background: linear-gradient(to right, #2d2d2d 20%, #ababab 20% 40%, #8d2663 40% 60%, #000000 60% 80%, white 80%);
+}
+
+.tasks__body textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 20px;
+}
+.tasks__body textarea:focus-visible {
+  outline: none;
 }/*# sourceMappingURL=main.min.css.map */
