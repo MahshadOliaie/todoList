@@ -28,6 +28,20 @@
         background-color: gray;
         position: sticky;
         top: 0;
+        padding: 0 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+         &__svg{
+            font-size: 20px;
+            fill: white;
+            transition: 300ms;
+            &:hover{
+                fill: rgb(226, 226, 226);
+                transform: scale(1.1);
+                transition: 300ms;
+            }
+         }
     }
 
     &__body{
@@ -39,7 +53,9 @@
             height: 60px;
             border-bottom: 2px solid rgba(0, 0, 0, 0.389);
             display: flex;
-            align-items: center;
+            flex-direction: column;
+
+            align-items: flex-start;
             justify-content: flex-start;
             padding: 0 20px;
             overflow: hidden;
@@ -72,4 +88,9 @@
             outline: none;
         }
     }
+}
+
+
+.currentNote{
+    background-color: rgb(170, 170, 170);
 }

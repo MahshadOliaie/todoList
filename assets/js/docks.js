@@ -6,8 +6,12 @@ let Container = document.querySelector(".tasks__body");
 let selected;
 let notesList = document.querySelector(".notesList");
 let notesHeader = document.querySelector(".notes__header");
+let plus = document.getElementById("plus");
+let currentNote;
+let myNotes = [];
+let noteListBody = document.querySelector(".notesList__body");
 
-function changeToNotes(){
+function changeToNotes() {
     selected = document.querySelector(".selected");
     notesList.classList.remove("dnone");
     notesHeader.classList.remove("dnone")
@@ -17,7 +21,7 @@ function changeToNotes(){
 }
 
 
-function changeToTodo(){
+function changeToTodo() {
     notesList.classList.add("dnone");
     notesHeader.classList.add("dnone")
     selected = document.querySelector(".selected");
@@ -28,7 +32,34 @@ function changeToTodo(){
 
 
 
+function openNote(id) {
+    document.querySelector(".currentNote").classList.remove("currentNote");
+    document.getElementById(id).classList.add("currentNote");
+
+    
+}
 
 
-notesBtn.addEventListener("click" , changeToNotes);
-todoBtn.addEventListener("click" , changeToTodo);
+
+function addNote() {
+    myNotes.push({"id":myNotes.length + 1, "title":"title..." , "body":"text..."})
+    notesListRender();
+    document.getElementById(`${myNotes.length}`).classList.add("currentNote");
+}
+
+function notesListRender() {
+    let template = myNotes.map(item => {
+        return `<div class="notesList__body__note" onclick="openNote(${item.id})" id="${item.id}">
+        <h2>${item.title}</h2>
+        <p>${item.body}</p>
+    </div>`
+    }).join("");
+
+    noteListBody.innerHTML = template;
+}
+
+
+
+notesBtn.addEventListener("click", changeToNotes);
+todoBtn.addEventListener("click", changeToTodo);
+plus.addEventListener("click", addNote)
