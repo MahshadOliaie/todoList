@@ -12,6 +12,7 @@
 
 
     &__header {
+        overflow: hidden;
         width: 100%;
         height: 30%;
         @include dflex();
@@ -20,6 +21,7 @@
         padding: 0 40px;
         border-top-left-radius: 50px;
         border-top-right-radius: 50px;
+        position: relative;
 
         @media screen and (max-width:600px) {
             padding: 0 30px;

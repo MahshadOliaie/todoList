@@ -455,6 +455,7 @@ body {
   }
 }
 .tasks__header {
+  overflow: hidden;
   width: 100%;
   height: 30%;
   display: -webkit-box;
@@ -477,6 +478,7 @@ body {
   padding: 0 40px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
+  position: relative;
 }
 @media screen and (max-width: 600px) {
   .tasks__header {
@@ -1462,6 +1464,7 @@ body {
 
 .tasks__body textarea {
   width: 100%;
+  max-width: 100%;
   height: 100%;
   border: none;
   background-color: transparent;
@@ -1506,4 +1509,39 @@ body {
           justify-content: flex-start;
   padding: 0 20px;
   overflow: hidden;
+}
+
+.notes__header {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  position: absolute;
+  left: 0;
+  z-index: 400;
+}
+.notes__header__title {
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+  font-size: 50px;
+  background-color: transparent;
+  border: none;
+}
+.notes__header__title::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.403);
+}
+.notes__header__title::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.403);
+}
+.notes__header__title:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.403);
+}
+.notes__header__title::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.403);
+}
+.notes__header__title::placeholder {
+  color: rgba(0, 0, 0, 0.403);
+}
+.notes__header__title:focus-visible {
+  outline: none;
 }/*# sourceMappingURL=main.min.css.map */
