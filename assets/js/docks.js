@@ -30,7 +30,7 @@ function changeToNotes() {
         }).join("")
         renderNotes((index));
     }
-    if(myNotes.length==0){
+    if (myNotes.length == 0) {
         Container.innerHTML = "";
     }
 
@@ -76,7 +76,6 @@ function addNote() {
 
 
 function addNoteRender() {
-    debugger
     currentNote = document.querySelector(".currentNote");
     if (currentNote) {
         currentNote.classList.remove("currentNote");
@@ -131,7 +130,7 @@ function changeTitle() {
 
 
 
-function changeBody() {
+function changeBody(e) {
     let value = noteBody.value;
     let id = currentNote.getAttribute("id");
     let index = myNotes.map((item, index) => {
@@ -154,9 +153,9 @@ function trashFn() {
             return index;
     }).join("")
     myNotes.splice((index), 1);
-    debugger
     addNoteRender();
 }
+
 
 
 
