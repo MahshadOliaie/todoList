@@ -155,6 +155,42 @@
         }
     }
 
+
+
+
+     //notes part
+
+     & .notesList {
+        background-color: white;
+
+        &__header {
+            background-color: $purple-4;
+
+            &__svg {
+                fill: $yellow-4;
+            }
+        }
+
+        &__body {
+
+            &__note {
+                border-bottom: 2px solid $purple-4;
+            }
+        }
+
+    }
+
+    & .notes__header {
+        background-color: $purple-4;
+    }
+
+
+
+    & .currentNote {
+        background-color: $light-green-4;
+    }
+
+
     #bg-1 {
         background: linear-gradient(100deg, rgb(214, 222, 233), $yellow-4);
     }

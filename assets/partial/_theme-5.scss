@@ -158,6 +158,46 @@
         }
     }
 
+
+
+     //notes part
+
+     & .notesList {
+        background-color: $gray-5;
+        color: black;
+
+        &__header {
+            background-color: $dark-gray-5;
+
+            &__svg {
+                fill: $pink-5;
+            }
+        }
+
+        &__body {
+
+            &__note {
+                border-bottom: 2px solid $pink-5;
+            }
+        }
+
+    }
+
+    & .notes__header {
+        background-color: $dark-gray-5;
+        & input{
+            color: rgb(220, 220, 220);
+        }
+    }
+
+
+
+    & .currentNote {
+        background-color: rgb(199, 199, 199);
+    }
+
+
+
     #bg-1 {
         background: linear-gradient(100deg, rgb(255, 255, 255), $black-5);
     }

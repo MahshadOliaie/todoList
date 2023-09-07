@@ -147,6 +147,39 @@
     }
 
 
+     //notes part
+
+     & .notesList {
+        background-color: white;
+
+        &__header {
+            background-color: $blue-2;
+
+            &__svg {
+                fill: $orange-2;
+            }
+        }
+
+        &__body {
+
+            &__note {
+                border-bottom: 2px solid $dark-blue-2;
+            }
+        }
+
+    }
+
+    & .notes__header {
+        background-color: $blue-2;
+    }
+
+
+
+    & .currentNote {
+        background-color: $light-blue-2;
+    }
+
+
     #bg-1 {
         background: linear-gradient(100deg, rgb(214, 222, 233), $blue-2);
     }
