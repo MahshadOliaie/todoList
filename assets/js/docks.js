@@ -12,7 +12,8 @@ let myNotes = [];
 let noteListBody = document.querySelector(".notesList__body");
 let titlebox = document.querySelector(".notes__header input");
 let noteBody = document.getElementById("text");
-let trash = document.getElementById("trash")
+let trash = document.getElementById("trash");
+
 
 function changeToNotes() {
     selected = document.querySelector(".selected");
@@ -20,6 +21,7 @@ function changeToNotes() {
     notesHeader.classList.remove("dnone");
     selected.classList.remove("selected");
     notesBtn.classList.add("selected");
+    search.classList.add("dnone");
     if (currentNote) {
         let id = currentNote.getAttribute("id");
         let index = myNotes.map((item, index) => {
@@ -28,6 +30,10 @@ function changeToNotes() {
         }).join("")
         renderNotes((index));
     }
+    if(myNotes.length==0){
+        Container.innerHTML = "";
+    }
+
 }
 
 function renderNotes(index) {
@@ -44,6 +50,7 @@ function changeToTodo() {
     selected.classList.remove("selected");
     render(tasks);
     todoBtn.classList.add("selected")
+    search.classList.remove("dnone");
 }
 
 
@@ -53,6 +60,7 @@ function openNote(id, index) {
     document.getElementById(id).classList.add("currentNote");
     renderNotes(index);
     currentNote = document.querySelector(".currentNote")
+    document.querySelector(".tools").classList.remove("open")
 
 
 }

@@ -368,6 +368,7 @@ input::placeholder {
     top: 20px;
     left: 20px;
     font-size: 20px;
+    z-index: 50000;
   }
   .open .tools__svg:hover {
     -webkit-transform: scale(1.1);

@@ -119,8 +119,11 @@ function addHandler(evt) {
 
 
 function searchHandler() {
-    result = tasks.filter(item => item.includes(search.value))
-    render(result);
+    selected = document.querySelector(".selected");
+    if(selected.textContent=="todo list"){
+        result = tasks.filter(item => item.includes(search.value))
+        render(result);
+    }
 }
 
 
