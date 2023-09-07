@@ -20,8 +20,14 @@ function changeToNotes() {
     notesHeader.classList.remove("dnone");
     selected.classList.remove("selected");
     notesBtn.classList.add("selected");
-    let id = currentNote.getAttribute("id");
-    renderNotes((id-1));
+    if (currentNote) {
+        let id = currentNote.getAttribute("id");
+        let index = myNotes.map((item, index) => {
+            if (item.id == id)
+                return index;
+        }).join("")
+        renderNotes((index));
+    }
 }
 
 function renderNotes(index) {
@@ -54,24 +60,42 @@ function openNote(id, index) {
 
 
 function addNote() {
-    myNotes.push({"id": myNotes.length + 1, "title": "", "body": "" })
+    (myNotes.length == 0) ? myNotes.push({ "id": (myNotes.length + 1), "title": "", "body": "" }) : myNotes.push({ "id": ((myNotes[(myNotes.length - 1)].id) + 1), "title": "", "body": "" });
+    addNoteRender();
+}
+
+
+
+
+function addNoteRender() {
+    debugger
     currentNote = document.querySelector(".currentNote");
-    if (currentNote){
+    if (currentNote) {
         currentNote.classList.remove("currentNote");
         currentNote = document.querySelector(".currentNote");
     }
     notesListRender();
-    document.getElementById(`${myNotes.length}`).classList.add("currentNote");
-    currentNote = document.querySelector(".currentNote");
-    renderNotes((myNotes.length - 1));
+    if (myNotes.length == 0) {
+        titlebox.value = "";
+        Container.innerHTML = "";
+    }
+    else {
+        document.getElementById(`${myNotes[(myNotes.length - 1)].id}`).classList.add("currentNote");
+        currentNote = document.querySelector(".currentNote");
+        renderNotes((myNotes.length - 1));
+    }
+
+
 }
+
+
 
 function notesListRender() {
     let id;
-    if (currentNote){
+    if (currentNote) {
         id = currentNote.getAttribute("id");
     }
-        
+
     let template = myNotes.map((item, index) => {
         return `<div class="notesList__body__note ${(item.id == id) ? "currentNote" : ""}" onclick="openNote(${item.id},${index})" id="${item.id}">
         <h2>${item.title}</h2>
@@ -87,7 +111,11 @@ function notesListRender() {
 function changeTitle() {
     let value = titlebox.value;
     let id = currentNote.getAttribute("id");
-    myNotes[id - 1].title = value;
+    let index = myNotes.map((item, index) => {
+        if (item.id == id)
+            return index;
+    }).join("")
+    myNotes[index].title = value;
 
     notesListRender();
 }
@@ -98,7 +126,12 @@ function changeTitle() {
 function changeBody() {
     let value = noteBody.value;
     let id = currentNote.getAttribute("id");
-    myNotes[id - 1].body = value;
+    let index = myNotes.map((item, index) => {
+        if (item.id == id)
+            return index;
+    }).join("");
+
+    myNotes[index].body = value;
 
     notesListRender();
 }
@@ -106,13 +139,16 @@ function changeBody() {
 
 
 
-// function trashFn(){
-//     let id = currentNote.getAttribute("id");
-//     myNotes.splice((id-1) , 1);
-//     notesListRender();
-//     renderNotes((myNotes.length-1));
-//     document.getElementById(`${myNotes.length}`).classList.add("currentNote");
-// }
+function trashFn() {
+    let id = currentNote.getAttribute("id");
+    let index = myNotes.map((item, index) => {
+        if (item.id == id)
+            return index;
+    }).join("")
+    myNotes.splice((index), 1);
+    debugger
+    addNoteRender();
+}
 
 
 
@@ -124,4 +160,4 @@ todoBtn.addEventListener("click", changeToTodo);
 plus.addEventListener("click", addNote)
 titlebox.addEventListener("keyup", changeTitle)
 Container.addEventListener("keyup", changeBody)
-trash.addEventListener("click" , trashFn);
+trash.addEventListener("click", trashFn);
