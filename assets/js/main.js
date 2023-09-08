@@ -20,7 +20,7 @@ let deleted = [];
 let deletedDoneTasks = [];
 let closebtn = document.querySelector(".close");
 let bars = document.querySelector(".bars");
-let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI"];
+let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI" ,"SATUR"];
 let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 let toastify = Toastify({
@@ -72,6 +72,7 @@ function add() {
 
 
 function done(item, index) {
+    debugger
     document.getElementById(`check${item}`).classList.toggle("done");
 
     doneTasks = [...document.querySelectorAll(".done")];
@@ -132,6 +133,7 @@ function searchHandler() {
 
 
 function remove(index, item) {
+    debugger
     deleted.push(item);
     tasks.splice(index, 1);
     if (doneTasksList.includes(item)) {
@@ -167,9 +169,10 @@ function undo() {
 
 
 function editFn(item, index) {
+    debugger
     document.getElementById(`more${index}`).classList.remove("show");
     let editedTodo = prompt("edit todo", item);
-    if (editedTodo !== null) {
+    if (editedTodo !== null && tasks.includes(editedTodo)==false) {
         tasks[index] = editedTodo;
         if (doneTasksList.includes(item)) {
             doneTasksList[doneTasksList.indexOf(item)] = editedTodo;

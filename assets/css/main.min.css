@@ -527,16 +527,16 @@ body {
     font-size: 2.5rem;
   }
 }
-.tasks__header__date__weekDay span {
+.tasks__header__date__weekDay > span {
   font-size: 55px;
 }
 @media screen and (max-width: 600px) {
-  .tasks__header__date__weekDay span {
+  .tasks__header__date__weekDay > span {
     font-size: 40px;
   }
 }
 @media screen and (max-width: 500px) {
-  .tasks__header__date__weekDay span {
+  .tasks__header__date__weekDay > span {
     font-size: 30px;
   }
 }
