@@ -281,10 +281,11 @@ input::placeholder {
         box-shadow: 2px 2px 10rem;
 
         & .tools__svg {
-            display: inline;
+            display: inline-block;
             position: absolute;
             top: 20px;
             left: 20px;
+
             font-size: 20px;
             z-index: 50000;
 
