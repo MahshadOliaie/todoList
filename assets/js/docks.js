@@ -2,6 +2,7 @@
 
 let notesBtn = document.querySelector(".dock__notes");
 let todoBtn = document.querySelector(".dock__todolist");
+let focusBtn = document.querySelector(".dock__focus");
 let Container = document.querySelector(".tasks__body");
 let selected;
 let notesList = document.querySelector(".notesList");
@@ -13,15 +14,19 @@ let noteListBody = document.querySelector(".notesList__body");
 let titlebox = document.querySelector(".notes__header input");
 let noteBody = document.getElementById("text");
 let trash = document.getElementById("trash");
+let focusSong = document.querySelector(".focus");
+let focusScreen = document.querySelector(".focusScreen");
 
 
 function changeToNotes() {
     selected = document.querySelector(".selected");
-    notesList.classList.remove("dnone");
-    notesHeader.classList.remove("dnone");
     selected.classList.remove("selected");
     notesBtn.classList.add("selected");
+    notesList.classList.remove("dnone");
+    notesHeader.classList.remove("dnone");
     search.classList.add("dnone");
+    focusSong.classList.add("dnone");
+    focusScreen.classList.add("dnone");
     if (currentNote) {
         let id = currentNote.getAttribute("id");
         let index = myNotes.map((item, index) => {
@@ -35,6 +40,28 @@ function changeToNotes() {
     }
 
 }
+
+
+
+
+
+function changeToFocus(){
+    selected = document.querySelector(".selected");
+    selected.classList.remove("selected");
+    focusBtn.classList.add("selected");
+    search.classList.add("dnone");
+    notesList.classList.add("dnone");
+    focusSong.classList.remove("dnone");
+    notesHeader.classList.add("dnone");
+    focusScreen.classList.remove("dnone");
+
+
+}
+
+
+
+
+
 
 function renderNotes(index) {
     titlebox.value = myNotes[index].title;
@@ -51,6 +78,8 @@ function changeToTodo() {
     render(tasks);
     todoBtn.classList.add("selected")
     search.classList.remove("dnone");
+    focusSong.classList.add("dnone");
+    focusScreen.classList.add("dnone");
 }
 
 
@@ -168,3 +197,4 @@ plus.addEventListener("click", addNote)
 titlebox.addEventListener("keyup", changeTitle)
 Container.addEventListener("keyup", changeBody)
 trash.addEventListener("click", trashFn);
+focusBtn.addEventListener("click" , changeToFocus);
