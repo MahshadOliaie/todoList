@@ -12,9 +12,9 @@ let root = document.querySelector(".tasks__body")
 let images = document.querySelectorAll(".chooseProfile__images__img");
 let donebtn = document.querySelector(".donebtn");
 let mainImage = document.querySelector(".chooseProfile__main");
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let doneTasks = [];
-let doneTasksList = []
-let tasks = [];
+let doneTasksList = JSON.parse(localStorage.getItem("doneTasks")) || [];
 let result = [];
 let deleted = [];
 let deletedDoneTasks = [];
@@ -52,6 +52,7 @@ function add() {
 
     if (newTask.value !== "" && tasks.includes(newTask.value) == false) {
         tasks.push(newTask.value);
+        localStorage.setItem("tasks" ,JSON.stringify(tasks))
         render(tasks);
         percent();
 
@@ -78,9 +79,13 @@ function done(item, index) {
     doneTasks = [...document.querySelectorAll(".done")];
     if (doneTasks.includes(document.getElementById(`check${item}`))) {
         doneTasksList.push(item);
-    } else
-        doneTasksList.splice(index, 1);
+        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
+    } else{
+         doneTasksList.splice(index, 1);
+        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
 
+    }
+       
     percent();
 }
 
@@ -136,9 +141,11 @@ function remove(index, item) {
     debugger
     deleted.push(item);
     tasks.splice(index, 1);
+    localStorage.setItem("tasks" ,JSON.stringify(tasks))
     if (doneTasksList.includes(item)) {
         deletedDoneTasks.push(item);
         doneTasksList.splice(doneTasksList.indexOf(item), 1);
+        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
     }
     render(tasks);
 
@@ -152,8 +159,10 @@ function remove(index, item) {
 function undo() {
     let lastElementOfDeleted = deleted[(deleted.length) - 1];
     tasks.push(lastElementOfDeleted);
+    localStorage.setItem("tasks" ,JSON.stringify(tasks))
     if (deletedDoneTasks.includes(lastElementOfDeleted)) {
         doneTasksList.push(lastElementOfDeleted);
+        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
         deletedDoneTasks.pop();
     }
     render(tasks);
@@ -174,8 +183,10 @@ function editFn(item, index) {
     let editedTodo = prompt("edit todo", item);
     if (editedTodo !== null && tasks.includes(editedTodo)==false) {
         tasks[index] = editedTodo;
+        localStorage.setItem("tasks" ,JSON.stringify(tasks))
         if (doneTasksList.includes(item)) {
             doneTasksList[doneTasksList.indexOf(item)] = editedTodo;
+            localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
         }
         render(tasks);
     }
@@ -264,6 +275,11 @@ closebtn.addEventListener("click" , function(){
     document.querySelector(".chooseProfile").classList.remove("showProfileBox")
     
 })
+
+window.addEventListener("load" ,function(){
+    render(tasks);
+    percent()
+} )
 
 
 for (const image of images) {

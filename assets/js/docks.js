@@ -8,8 +8,8 @@ let selected;
 let notesList = document.querySelector(".notesList");
 let notesHeader = document.querySelector(".notes__header");
 let plus = document.getElementById("plus");
-let currentNote;
-let myNotes = [];
+let currentNote = JSON.parse(localStorage.getItem("currentNote")) || null;
+let myNotes = JSON.parse(localStorage.getItem("notes")) || [];
 let noteListBody = document.querySelector(".notesList__body");
 let titlebox = document.querySelector(".notes__header input");
 let noteBody = document.getElementById("text");
@@ -27,6 +27,7 @@ function changeToNotes() {
     search.classList.add("dnone");
     focusSong.classList.add("dnone");
     focusScreen.classList.add("dnone");
+   
     if (currentNote) {
         let id = currentNote.getAttribute("id");
         let index = myNotes.map((item, index) => {
@@ -38,6 +39,8 @@ function changeToNotes() {
     if (myNotes.length == 0) {
         Container.innerHTML = "";
     }
+
+     notesListRender()
 
 }
 
@@ -98,6 +101,7 @@ function openNote(id, index) {
 
 function addNote() {
     (myNotes.length == 0) ? myNotes.push({ "id": (myNotes.length + 1), "title": "", "body": "" }) : myNotes.push({ "id": ((myNotes[(myNotes.length - 1)].id) + 1), "title": "", "body": "" });
+    localStorage.setItem("notes" , JSON.stringify(myNotes));
     addNoteRender();
 }
 
@@ -109,6 +113,7 @@ function addNoteRender() {
     if (currentNote) {
         currentNote.classList.remove("currentNote");
         currentNote = document.querySelector(".currentNote");
+
     }
     notesListRender();
     if (myNotes.length == 0) {
@@ -118,6 +123,7 @@ function addNoteRender() {
     else {
         document.getElementById(`${myNotes[(myNotes.length - 1)].id}`).classList.add("currentNote");
         currentNote = document.querySelector(".currentNote");
+
         renderNotes((myNotes.length - 1));
     }
 
@@ -152,6 +158,7 @@ function changeTitle() {
             return index;
     }).join("")
     myNotes[index].title = value;
+    localStorage.setItem("notes" , JSON.stringify(myNotes));
 
     notesListRender();
 }
@@ -168,6 +175,7 @@ function changeBody(e) {
     }).join("");
 
     myNotes[index].body = value;
+    localStorage.setItem("notes" , JSON.stringify(myNotes));
 
     notesListRender();
 }
@@ -182,6 +190,7 @@ function trashFn() {
             return index;
     }).join("")
     myNotes.splice((index), 1);
+    localStorage.setItem("notes" , JSON.stringify(myNotes));
     addNoteRender();
 }
 
@@ -198,3 +207,14 @@ titlebox.addEventListener("keyup", changeTitle)
 Container.addEventListener("keyup", changeBody)
 trash.addEventListener("click", trashFn);
 focusBtn.addEventListener("click" , changeToFocus);
+
+
+
+
+
+
+function updateCurrentNote(id){
+    localStorage.setItem("currentNote" , JSON.stringify(id));
+    let current = myNotes.find(item => item.id == currentNote);
+    current.classList.add(".currentNote")
+}
