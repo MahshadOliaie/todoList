@@ -23,6 +23,7 @@ function addNote() {
     currentNote = myNotes[(myNotes.length - 1)].id;
     localStorage.setItem("current", JSON.stringify(currentNote))
     addNoteRender();
+    openNote(currentNote)
 }
 
 
