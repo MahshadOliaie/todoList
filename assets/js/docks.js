@@ -80,19 +80,6 @@ function changeToTodo() {
 
 
 
-function trashFn() {
-    let id = currentNote.getAttribute("id");
-    let index = myNotes.map((item, index) => {
-        if (item.id == id)
-            return index;
-    }).join("")
-    myNotes.splice((index), 1);
-    localStorage.setItem("notes", JSON.stringify(myNotes));
-    addNoteRender();
-}
-
-
-
 
 
 

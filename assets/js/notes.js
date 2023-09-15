@@ -112,3 +112,22 @@ function renderNotes() {
     titlebox.value = myNotes[index].title;
     Container.innerHTML = `<textarea name="text" id="text" cols="30" rows="10" class="note" placeholder="write here..." onkeyup="changeBody()">${myNotes[index].body}</textarea>`
 }
+
+
+
+
+function trashFn() {
+    let index = myNotes.map((item, index) => {
+        if (item.id == currentNote)
+            return index;
+    }).join("")
+    myNotes.splice((index), 1);
+    localStorage.setItem("notes", JSON.stringify(myNotes));
+    if (myNotes.length !== 0) {
+        currentNote = myNotes[(myNotes.length - 1)].id;
+    } else
+        currentNote = "";
+
+    localStorage.setItem("current", JSON.stringify(currentNote))
+    addNoteRender();
+}
