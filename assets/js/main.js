@@ -205,6 +205,11 @@ function percent() {
 
     document.querySelector(".tools__progress__diagram__done").style.width = `${percent}%`;
     document.querySelector(".tools__progress__percent__number").textContent = Math.floor(percent) + "%"
+
+    if(tasks.length==0){
+        document.querySelector(".tools__progress__diagram__done").style.width = "0";
+        document.querySelector(".tools__progress__percent__number").textContent = "0%"
+    }
 }
 
 
