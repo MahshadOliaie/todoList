@@ -255,7 +255,7 @@ function renderTools() {
 <div class="tools__themes">
     <p class="tools__themes__title">Themes</p>
     <div class="tools__themes__colors">
-        <div class="tools__themes__colors__color current" onclick="changeTheme('theme-1')" id="theme-1"></div>
+        <div class="tools__themes__colors__color" onclick="changeTheme('theme-1')" id="theme-1"></div>
         <div class="tools__themes__colors__color" onclick="changeTheme('theme-2')" id="theme-2"></div>
         <div class="tools__themes__colors__color" onclick="changeTheme('theme-3')" id="theme-3"></div>
         <div class="tools__themes__colors__color" onclick="changeTheme('theme-4')" id="theme-4"></div>
@@ -266,7 +266,7 @@ function renderTools() {
 <div class="tools__backgrounds">
     <p class="tools__backgrounds__title">Backgrounds</p>
     <div class="tools__backgrounds__colors">
-        <div class="tools__backgrounds__colors__color current" onclick="changeBg('bg-1')" id="bg-1"></div>
+        <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-1')" id="bg-1"></div>
         <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-2')" id="bg-2"></div>
         <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-3')" id="bg-3"></div>
         <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-4')" id="bg-4"></div>
