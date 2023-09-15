@@ -61,7 +61,7 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background-image: url(../images/human.jpeg);
+  background-image: url(/assets/images/human.jpeg);
   background-size: cover;
   margin-top: 30px;
   margin-bottom: 10px;

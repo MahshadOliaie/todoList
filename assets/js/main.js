@@ -19,6 +19,7 @@ let deleted = [];
 let deletedDoneTasks = [];
 let closebtn = document.querySelector(".close");
 let name;
+let profileImg = JSON.parse(localStorage.getItem("profileImg")) || "../images/human.jpeg"
 let username = JSON.parse(localStorage.getItem("username")) || "your name";
 let bars = document.querySelector(".bars");
 let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI", "SATUR"];
@@ -308,14 +309,17 @@ function changeProfile() {
 
 function chooseImage() {
     mainImage.setAttribute("src", this.getAttribute("src"))
+    console.log(mainImage)
+    profileImg = this.getAttribute("src");
+    localStorage.setItem("profileImg", JSON.stringify(profileImg));
 
 }
 
 function change() {
-    document.querySelector(".tools__account__image").style.backgroundImage = `url(${document.querySelector(".chooseProfile__main").getAttribute("src")})`
+    document.querySelector(".tools__account__image").style.backgroundImage = `url(${profileImg})`
     document.querySelector(".chooseProfile").classList.remove("showProfileBox")
 }
-
+ 
 
 
 function closeTools() {
@@ -330,6 +334,7 @@ function callTodo() {
     renderTools();
     render(tasks);
     percent()
+    change()
 }
 
 //events
