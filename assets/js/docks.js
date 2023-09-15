@@ -7,13 +7,11 @@ let Container = document.querySelector(".tasks__body");
 let selected;
 let notesList = document.querySelector(".notesList");
 let notesHeader = document.querySelector(".notes__header");
-let plus = document.getElementById("plus");
-let currentNote = JSON.parse(localStorage.getItem("currentNote")) || null;
+let currentNote = JSON.parse(localStorage.getItem("currentNote")) || "";
 let myNotes = JSON.parse(localStorage.getItem("notes")) || [];
 let noteListBody = document.querySelector(".notesList__body");
 let titlebox = document.querySelector(".notes__header input");
 let noteBody = document.getElementById("text");
-let trash = document.getElementById("trash");
 let focusSong = document.querySelector(".focus");
 let focusScreen = document.querySelector(".focusScreen");
 
@@ -22,12 +20,13 @@ function changeToNotes() {
     selected = document.querySelector(".selected");
     selected.classList.remove("selected");
     notesBtn.classList.add("selected");
+    renderNotes();
     notesList.classList.remove("dnone");
     notesHeader.classList.remove("dnone");
     search.classList.add("dnone");
     focusSong.classList.add("dnone");
     focusScreen.classList.add("dnone");
-   
+
     if (currentNote) {
         let id = currentNote.getAttribute("id");
         let index = myNotes.map((item, index) => {
@@ -36,11 +35,12 @@ function changeToNotes() {
         }).join("")
         renderNotes((index));
     }
-    if (myNotes.length == 0) {
-        Container.innerHTML = "";
-    }
+        if (myNotes.length == 0) {
+            Container.innerHTML = "";
+        }
 
-     notesListRender()
+
+    notesListRender()
 
 }
 
@@ -48,7 +48,7 @@ function changeToNotes() {
 
 
 
-function changeToFocus(){
+function changeToFocus() {
     selected = document.querySelector(".selected");
     selected.classList.remove("selected");
     focusBtn.classList.add("selected");
@@ -74,11 +74,13 @@ function renderNotes(index) {
 
 
 function changeToTodo() {
-    notesList.classList.add("dnone");
+    // notesList.classList.add("dnone");
     notesHeader.classList.add("dnone")
     selected = document.querySelector(".selected");
     selected.classList.remove("selected");
     render(tasks);
+    renderTools();
+    percent()
     todoBtn.classList.add("selected")
     search.classList.remove("dnone");
     focusSong.classList.add("dnone");
@@ -158,7 +160,7 @@ function changeTitle() {
             return index;
     }).join("")
     myNotes[index].title = value;
-    localStorage.setItem("notes" , JSON.stringify(myNotes));
+    localStorage.setItem("notes", JSON.stringify(myNotes));
 
     notesListRender();
 }
@@ -175,7 +177,7 @@ function changeBody(e) {
     }).join("");
 
     myNotes[index].body = value;
-    localStorage.setItem("notes" , JSON.stringify(myNotes));
+    localStorage.setItem("notes", JSON.stringify(myNotes));
 
     notesListRender();
 }
@@ -190,7 +192,7 @@ function trashFn() {
             return index;
     }).join("")
     myNotes.splice((index), 1);
-    localStorage.setItem("notes" , JSON.stringify(myNotes));
+    localStorage.setItem("notes", JSON.stringify(myNotes));
     addNoteRender();
 }
 
@@ -202,12 +204,9 @@ function trashFn() {
 
 notesBtn.addEventListener("click", changeToNotes);
 todoBtn.addEventListener("click", changeToTodo);
-plus.addEventListener("click", addNote)
 titlebox.addEventListener("keyup", changeTitle)
 Container.addEventListener("keyup", changeBody)
-trash.addEventListener("click", trashFn);
-focusBtn.addEventListener("click" , changeToFocus);
-
+focusBtn.addEventListener("click", changeToFocus);
 
 
 

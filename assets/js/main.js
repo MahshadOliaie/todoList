@@ -5,8 +5,7 @@ let addBtn = document.querySelector(".tasks__header__add__addBtn");
 let newTask = document.querySelector(".tasks__header__add__newTask");
 let tasksBox = document.querySelector(".tasks__body");
 let checkbox = [];
-let name = document.querySelector(".tools__account__name");
-let profile = document.querySelector(".tools__account__image")
+let toolsBox = document.querySelector(".tools");
 let search = document.querySelector(".search");
 let root = document.querySelector(".tasks__body")
 let images = document.querySelectorAll(".chooseProfile__images__img");
@@ -20,13 +19,13 @@ let deleted = [];
 let deletedDoneTasks = [];
 let closebtn = document.querySelector(".close");
 let bars = document.querySelector(".bars");
-let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI" ,"SATUR"];
+let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI", "SATUR"];
 let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
 let toastify = Toastify({
     text: "tab to undo",
     close: true,
-    className : "toast",
+    className: "toast",
     duration: 3000,
     gravity: "bottom", // `top` or `bottom`
     position: "right", // `left`, `center` or `right`
@@ -41,6 +40,9 @@ let toastify = Toastify({
     }, onClick: undo
 })
 
+
+
+
 //functions
 
 date();
@@ -52,7 +54,7 @@ function add() {
 
     if (newTask.value !== "" && tasks.includes(newTask.value) == false) {
         tasks.push(newTask.value);
-        localStorage.setItem("tasks" ,JSON.stringify(tasks))
+        localStorage.setItem("tasks", JSON.stringify(tasks))
         render(tasks);
         percent();
 
@@ -79,13 +81,13 @@ function done(item, index) {
     doneTasks = [...document.querySelectorAll(".done")];
     if (doneTasks.includes(document.getElementById(`check${item}`))) {
         doneTasksList.push(item);
-        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
-    } else{
-         doneTasksList.splice(index, 1);
-        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
+        localStorage.setItem("doneTasks", JSON.stringify(doneTasksList))
+    } else {
+        doneTasksList.splice(index, 1);
+        localStorage.setItem("doneTasks", JSON.stringify(doneTasksList))
 
     }
-       
+
     percent();
 }
 
@@ -126,7 +128,7 @@ function addHandler(evt) {
 
 function searchHandler() {
     selected = document.querySelector(".selected");
-    if(selected.textContent=="todo list"){
+    if (selected.textContent == "todo list") {
         result = tasks.filter(item => item.includes(search.value))
         render(result);
     }
@@ -138,14 +140,13 @@ function searchHandler() {
 
 
 function remove(index, item) {
-    debugger
     deleted.push(item);
     tasks.splice(index, 1);
-    localStorage.setItem("tasks" ,JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks))
     if (doneTasksList.includes(item)) {
         deletedDoneTasks.push(item);
         doneTasksList.splice(doneTasksList.indexOf(item), 1);
-        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
+        localStorage.setItem("doneTasks", JSON.stringify(doneTasksList))
     }
     render(tasks);
 
@@ -159,10 +160,10 @@ function remove(index, item) {
 function undo() {
     let lastElementOfDeleted = deleted[(deleted.length) - 1];
     tasks.push(lastElementOfDeleted);
-    localStorage.setItem("tasks" ,JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks))
     if (deletedDoneTasks.includes(lastElementOfDeleted)) {
         doneTasksList.push(lastElementOfDeleted);
-        localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
+        localStorage.setItem("doneTasks", JSON.stringify(doneTasksList))
         deletedDoneTasks.pop();
     }
     render(tasks);
@@ -171,27 +172,26 @@ function undo() {
 
     document.querySelector(".toast").style.display = "none";
 
-    
+
 
 }
 
 
 
 function editFn(item, index) {
-    debugger
     document.getElementById(`more${index}`).classList.remove("show");
     let editedTodo = prompt("edit todo", item);
-    if (editedTodo !== null && tasks.includes(editedTodo)==false) {
+    if (editedTodo !== null && tasks.includes(editedTodo) == false) {
         tasks[index] = editedTodo;
-        localStorage.setItem("tasks" ,JSON.stringify(tasks))
+        localStorage.setItem("tasks", JSON.stringify(tasks))
         if (doneTasksList.includes(item)) {
             doneTasksList[doneTasksList.indexOf(item)] = editedTodo;
-            localStorage.setItem("doneTasks" , JSON.stringify(doneTasksList))
+            localStorage.setItem("doneTasks", JSON.stringify(doneTasksList))
         }
         render(tasks);
     }
 
-    
+
 
     if (editedTodo == "") {
         remove(index)
@@ -212,19 +212,63 @@ function percent() {
 function render(array) {
     let template = array.map((item, index) => {
 
-            return `<div class="tasks__body__task"><div class="svg" onclick='moreFN("${index}")'><svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml: space="preserve">
+        return `<div class="tasks__body__task"><div class="svg" onclick='moreFN("${index}")'><svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns: xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml: space="preserve">
             <g>
                 <path d="M30,16c4.411,0,8-3.589,8-8s-3.589-8-8-8s-8,3.589-8,8S25.589,16,30,16z"></path>
                 <path d="M30,44c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,44,30,44z"></path>
                 <path d="M30,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,22,30,22z"></path>
             </g>
-        </svg></div><div class="more" id="more${index}"><p class="edit" onclick='editFn("${item}" , ${index})'>edit</p><p class="remove" onclick='remove(${index},"${item}")'>remove</p></div><div class="tasks__body__task__check ${(doneTasksList.includes(item))? "done" : ""}" onclick='done("${item}" , ${index})' id="check${item}"></div><p class="tasks__body__task__content">${item}</p></div>`
-    
+        </svg></div><div class="more" id="more${index}"><p class="edit" onclick='editFn("${item}" , ${index})'>edit</p><p class="remove" onclick='remove(${index},"${item}")'>remove</p></div><div class="tasks__body__task__check ${(doneTasksList.includes(item)) ? "done" : ""}" onclick='done("${item}" , ${index})' id="check${item}"></div><p class="tasks__body__task__content">${item}</p></div>`
+
     }).join("");
 
     root.innerHTML = template;
 
 
+}
+
+
+
+function renderTools() {
+    toolsBox.innerHTML = `  <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="close tools__svg" onclick="closeTools()"
+    viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+    <path
+        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+</svg>
+<div class="tools__account">
+    <div class="tools__account__image" onclick="changeProfile()"></div>
+    <p class="tools__account__name" onclick="editName()">your name</p>
+</div>
+
+<div class="tools__progress">
+    <p class="tools__progress__title"> Progress</p>
+    <span class="tools__progress__percent"><span class="tools__progress__percent__number">0%</span>DONE</span>
+    <div class="tools__progress__diagram">
+        <div class="tools__progress__diagram__done"></div>
+    </div>
+</div>
+<div class="tools__themes">
+    <p class="tools__themes__title">Themes</p>
+    <div class="tools__themes__colors">
+        <div class="tools__themes__colors__color current" onclick="changeTheme('theme-1')" id="theme-1"></div>
+        <div class="tools__themes__colors__color" onclick="changeTheme('theme-2')" id="theme-2"></div>
+        <div class="tools__themes__colors__color" onclick="changeTheme('theme-3')" id="theme-3"></div>
+        <div class="tools__themes__colors__color" onclick="changeTheme('theme-4')" id="theme-4"></div>
+        <div class="tools__themes__colors__color" onclick="changeTheme('theme-5')" id="theme-5"></div>
+    </div>
+</div>
+
+<div class="tools__backgrounds">
+    <p class="tools__backgrounds__title">Backgrounds</p>
+    <div class="tools__backgrounds__colors">
+        <div class="tools__backgrounds__colors__color current" onclick="changeBg('bg-1')" id="bg-1"></div>
+        <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-2')" id="bg-2"></div>
+        <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-3')" id="bg-3"></div>
+        <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-4')" id="bg-4"></div>
+        <div class="tools__backgrounds__colors__color" onclick="changeBg('bg-5')" id="bg-5"></div>
+    </div>
+</div>
+`
 }
 
 
@@ -260,26 +304,29 @@ function change() {
 
 
 
+function closeTools(){
+    document.querySelector(".tools").classList.remove("open")
+    document.querySelector(".chooseProfile").classList.remove("showProfileBox")
+}
+
+
 //events
+window.addEventListener("load", function () {
+    renderTools();
+    render(tasks);
+    percent()
+})
+
+
 addBtn.addEventListener("click", add);
 newTask.addEventListener("keyup", addHandler);
 search.addEventListener("keyup", searchHandler);
-name.addEventListener("click", editName);
-profile.addEventListener("click", changeProfile)
 donebtn.addEventListener("click", change)
-bars.addEventListener("click" , function(){
+bars.addEventListener("click", function () {
     document.querySelector(".tools").classList.add("open")
 })
-closebtn.addEventListener("click" , function(){
-    document.querySelector(".tools").classList.remove("open")
-    document.querySelector(".chooseProfile").classList.remove("showProfileBox")
-    
-})
+// closebtn.addEventListener("click", closeTools)
 
-window.addEventListener("load" ,function(){
-    render(tasks);
-    percent()
-} )
 
 
 for (const image of images) {
