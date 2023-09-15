@@ -18,6 +18,8 @@ let result = [];
 let deleted = [];
 let deletedDoneTasks = [];
 let closebtn = document.querySelector(".close");
+let name;
+let username = JSON.parse(localStorage.getItem("username")) || "your name";
 let bars = document.querySelector(".bars");
 let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI", "SATUR"];
 let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
@@ -206,7 +208,7 @@ function percent() {
     document.querySelector(".tools__progress__diagram__done").style.width = `${percent}%`;
     document.querySelector(".tools__progress__percent__number").textContent = Math.floor(percent) + "%"
 
-    if(tasks.length==0){
+    if (tasks.length == 0) {
         document.querySelector(".tools__progress__diagram__done").style.width = "0";
         document.querySelector(".tools__progress__percent__number").textContent = "0%"
     }
@@ -242,7 +244,7 @@ function renderTools() {
 </svg>
 <div class="tools__account">
     <div class="tools__account__image" onclick="changeProfile()"></div>
-    <p class="tools__account__name" onclick="editName()">your name</p>
+    <p class="tools__account__name" onclick="editName()">${username}</p>
 </div>
 
 <div class="tools__progress">
@@ -287,8 +289,15 @@ function date() {
 
 
 function editName() {
-    let newName = prompt("Enter your name", "your name");
+    debugger
+    name = document.querySelector(".tools__account__name")
+    let newName = prompt("Enter your name", username);
+    username = newName;
+    localStorage.setItem("username", JSON.stringify(username))
     name.textContent = newName;
+    if (newName == "" || newName == null || newName == " ") {
+        name.textContent = "your name";
+    }
 }
 
 
@@ -309,7 +318,7 @@ function change() {
 
 
 
-function closeTools(){
+function closeTools() {
     document.querySelector(".tools").classList.remove("open")
     document.querySelector(".chooseProfile").classList.remove("showProfileBox")
 }
@@ -317,7 +326,7 @@ function closeTools(){
 
 
 
-function callTodo(){
+function callTodo() {
     renderTools();
     render(tasks);
     percent()
