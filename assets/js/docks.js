@@ -61,17 +61,15 @@ function changeToFocus() {
 
 
 function changeToTodo() {
-    // notesList.classList.add("dnone");
     notesHeader.classList.add("dnone")
     selected = document.querySelector(".selected");
     selected.classList.remove("selected");
-    render(tasks);
-    renderTools();
-    percent()
+    callTodo();
     todoBtn.classList.add("selected")
     search.classList.remove("dnone");
     focusSong.classList.add("dnone");
     focusScreen.classList.add("dnone");
+    callThemes();
 }
 
 

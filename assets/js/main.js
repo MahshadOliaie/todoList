@@ -36,7 +36,7 @@ let toastify = Toastify({
         textAlign: "center",
         color: "black",
         width: "200px",
-        background: "linear-gradient(to right, #F69A3F, #E5E9D6)",
+        background: "linear-gradient(to right, gray, white)",
     }, onClick: undo
 })
 
@@ -315,12 +315,16 @@ function closeTools(){
 }
 
 
-//events
-window.addEventListener("load", function () {
+
+
+function callTodo(){
     renderTools();
     render(tasks);
     percent()
-})
+}
+
+//events
+window.addEventListener("load", callTodo)
 
 
 addBtn.addEventListener("click", add);

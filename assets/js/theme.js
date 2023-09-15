@@ -31,7 +31,9 @@ function changeBg(id) {
 
 
 
-window.addEventListener("load" , function(){
+function callThemes(){
     changeTheme(currentTheme);
     changeBg(currentBg);
-})
+}
+
+window.addEventListener("load" , callThemes)
