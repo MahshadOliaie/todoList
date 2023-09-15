@@ -84,6 +84,8 @@ function changeTitle() {
 
 
 function changeBody() {
+    debugger
+    noteBody = document.getElementById("text");
     let value = noteBody.value;
     let index = myNotes.map((item, index) => {
         if (item.id == currentNote)
@@ -100,6 +102,7 @@ function changeBody() {
 
 
 function renderNotes() {
+    debugger
     let index = myNotes.map((item, index) => {
         if (item.id == currentNote)
             return index;
