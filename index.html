@@ -11,10 +11,11 @@
     <script src="./assets/js/main.js" defer></script>
     <script src="./assets/js/docks.js" defer></script>
     <script src="./assets/js/notes.js" defer></script>
+    <script src="./assets/js/focus.js" defer></script>
     <script src="./assets/js/theme.js" defer></script>
 </head>
 
-<body class="theme-1">  
+<body class="theme-1">
 
     <svg xmlns="http://www.w3.org/2000/svg" class="bars" height="1em"
         viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -31,17 +32,6 @@
     <!-- tools section -->
     <section class="tools">
 
-    
-
-        <section class="focus dnone">
-            <div class="focus__header">
-            </div>
-            <div class="focus__body">
-            </div>
-        </section>
-
-
-       
     </section>
 
 
@@ -58,7 +48,8 @@
         <div class="tasks__header">
 
             <div class="notes__header dnone">
-                <input type="text" name="title" class="notes__header__title" value="" placeholder="title..." autofocus onkeyup="changeTitle()">
+                <input type="text" name="title" class="notes__header__title" value="" placeholder="title..." autofocus
+                    onkeyup="changeTitle()">
             </div>
 
             <div class="tasks__header__date">
@@ -71,15 +62,15 @@
             <div class="tasks__header__add">
                 <div>
                     <input type="text" class="tasks__header__add__newTask" name="newTask" placeholder="new task..."
-                    value="">
-                <button class="tasks__header__add__addBtn">ADD</button>
+                        value="">
+                    <button class="tasks__header__add__addBtn">ADD</button>
                 </div>
                 <p class="tasks__header__add__warning"></p>
             </div>
         </div>
 
         <section class="tasks__body">
-            
+
         </section>
     </section>
 

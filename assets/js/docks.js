@@ -12,7 +12,7 @@ let myNotes = JSON.parse(localStorage.getItem("notes")) || [];
 let noteListBody = document.querySelector(".notesList__body");
 let titlebox = document.querySelector(".notes__header input");
 let noteBody = document.getElementById("text");
-let focusSong = document.querySelector(".focus");
+let focusSong = document.querySelector(".tools__focus");
 let focusScreen = document.querySelector(".focusScreen");
 
 
@@ -49,8 +49,7 @@ function changeToFocus() {
     selected.classList.remove("selected");
     focusBtn.classList.add("selected");
     search.classList.add("dnone");
-    notesList.classList.add("dnone");
-    focusSong.classList.remove("dnone");
+    focusToolsRender()
     notesHeader.classList.add("dnone");
     focusScreen.classList.remove("dnone");
 

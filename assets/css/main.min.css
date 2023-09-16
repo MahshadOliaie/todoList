@@ -1663,32 +1663,106 @@ body {
   outline: none;
 }
 
-.focus {
+.tools__focus {
   width: 100%;
   height: 100%;
-  position: absolute;
-  z-index: 200;
-  overflow: scroll;
-  background-color: white;
-}
-.focus__header {
-  width: 100%;
-  height: 100px;
-  position: sticky;
-  top: 0;
-  padding: 0 5%;
+  background-color: rgb(255, 255, 255);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #7AD9EB;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.focus__body {
-  margin: 5px 0;
+.tools__focus__song {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.tools__focus__song:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.tools__focus__song__layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.351);
+  color: rgba(255, 255, 255, 0.764);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.tools__focus__song__layer p {
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  font-size: 25px;
+  font-family: songs;
+  border: 0.5px solid;
+  padding: 5px 12px;
+}
+@font-face {
+  font-family: songs;
+  src: url(../font/dw-futura-light.woff2);
+}
+.tools__focus__song__layer:hover p {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.songContainer {
+  width: 100%;
+  height: 16.5289256198%;
+  overflow: hidden;
+}
+
+#focus-1 {
+  background-image: url(../images/blur-river.jpeg);
+}
+
+#focus-2 {
+  background-image: url(../images/fire.jpeg);
+}
+
+#focus-3 {
+  background-image: url(../images/forest.jpeg);
+}
+
+#focus-4 {
+  background-image: url(../images/rain.jpeg);
+}
+
+#focus-5 {
+  background-image: url(../images/view.jpeg);
+}
+
+#focus-6 {
+  background-image: url(../images/waterfall.jpeg);
 }
 
 .focusScreen {
