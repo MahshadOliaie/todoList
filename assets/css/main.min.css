@@ -1839,7 +1839,6 @@ body {
   color: rgba(255, 255, 255, 0.852);
   font-family: songs;
   font-size: 30px;
-  outline: 3px solid;
 }
 .focusScreen__timer__time {
   margin-bottom: 10px;
@@ -1857,7 +1856,52 @@ body {
   transition: 300ms;
 }
 
+.reset {
+  color: white;
+  font-family: songs;
+  font-size: 20px;
+  position: absolute;
+  bottom: -35%;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  padding: 10px;
+  cursor: pointer;
+}
+.reset:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
 #playSong {
   margin: 0 30px 0 35px;
   font-size: 34px;
+}
+
+.circular-chart {
+  width: 225px;
+  height: 225px;
+  position: absolute;
+  z-index: -1;
+}
+
+.circle {
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 0.3;
+  stroke-linecap: round;
+  animation: progress 1500s linear forwards reverse paused;
+}
+
+@-webkit-keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
 }/*# sourceMappingURL=main.min.css.map */

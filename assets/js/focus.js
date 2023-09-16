@@ -3,6 +3,7 @@ let screen = document.querySelector(".focusScreen");
 let playTimer = document.getElementById("playTimer");
 let playSong = document.getElementById("playSong");
 let minute = document.querySelector(".minute")
+let reset = document.querySelector(".reset");
 let second = document.querySelector(".second");
 
 
@@ -72,11 +73,15 @@ function playStateHandler(whichPlay) {
     whichPlay.classList.toggle("fa-play");
     if (whichPlay == playTimer) {
         let classArr = [...whichPlay.classList];
-        if(classArr.includes("fa-pause")){
-            interval= setInterval(timer , 1000);
+        if (classArr.includes("fa-pause")) {
+            interval = setInterval(timer, 1000);
+            document.querySelector(".circle").style.animationPlayState = "running"
         }
-        else
-        clearInterval(interval)
+        else {
+            clearInterval(interval)
+            document.querySelector(".circle").style.animationPlayState = "paused"
+        }
+
     }
 }
 
@@ -88,15 +93,27 @@ function timer() {
     if (sec === "00") {
         second.textContent = "59";
         minute.textContent = +min - 1;
-        minute.textContent= minute.textContent.padStart(2,"0");
-        
+        minute.textContent = minute.textContent.padStart(2, "0");
+
     } else {
         second.textContent = +sec - 1;
-        second.textContent = second.textContent.padStart(2,"0");
+        second.textContent = second.textContent.padStart(2, "0");
     }
 }
 
 
+
+function resetfn() {
+    minute.textContent = "25";
+    second.textContent = "00"
+    clearInterval(interval);
+    playTimer.classList.add("fa-play");
+    playTimer.classList.remove("fa-pause");
+    document.querySelector(".circle").style.animation="none";
+    setTimeout(() => {
+        document.querySelector(".circle").style.animation="progress 1500s linear forwards reverse paused";
+    }, 100);
+}
 
 
 
@@ -109,3 +126,4 @@ playTimer.addEventListener("click", function () {
 playSong.addEventListener("click", function () {
     playStateHandler(playSong)
 })
+reset.addEventListener("click", resetfn);

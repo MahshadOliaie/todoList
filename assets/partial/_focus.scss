@@ -22,13 +22,13 @@
             cursor: pointer;
 
 
-            &:hover{
+            &:hover {
                 transform: scale(1.1);
                 transition: 500ms;
             }
 
 
-            &__layer{
+            &__layer {
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -40,8 +40,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                 
-                & p{
+
+                & p {
                     transition: 500ms;
                     font-size: 25px;
                     font-family: songs;
@@ -54,11 +54,11 @@
                     src: url(../font/dw-futura-light.woff2);
                 }
 
-                &:hover p{
+                &:hover p {
                     transform: scale(0.9);
                     transition: 500ms;
                 }
-    
+
             }
         }
 
@@ -69,29 +69,34 @@
 }
 
 
-.songContainer{
+.songContainer {
     width: 100%;
     height: calc(100% /6.05);
     overflow: hidden;
 }
 
 
-#focus-1{
+#focus-1 {
     background-image: url(../images/blur-river.jpeg);
 }
-#focus-2{
+
+#focus-2 {
     background-image: url(../images/fire.jpeg);
 }
-#focus-3{
+
+#focus-3 {
     background-image: url(../images/forest.jpeg);
 }
-#focus-4{
+
+#focus-4 {
     background-image: url(../images/rain.jpeg);
 }
-#focus-5{
+
+#focus-5 {
     background-image: url(../images/view.jpeg);
 }
-#focus-6{
+
+#focus-6 {
     background-image: url(../images/waterfall.jpeg);
 }
 
@@ -110,7 +115,7 @@
     background-position: right;
 
 
-    &__player{
+    &__player {
         width: 95%;
         height: 13%;
         border-radius: 50px;
@@ -124,9 +129,10 @@
         justify-content: center;
         font-size: 30px;
 
-        & i{
+        & i {
             transition: 300ms;
-            &:hover{
+
+            &:hover {
                 color: rgb(161, 161, 161);
                 transform: scale(1.1);
                 transition: 300ms;
@@ -135,7 +141,7 @@
     }
 
 
-    &__timer{
+    &__timer {
         position: absolute;
         top: calc(55% - 100px);
         left: calc(50% - 100px);
@@ -152,18 +158,17 @@
         color: rgba(255, 255, 255, 0.852);
         font-family: songs;
         font-size: 30px;
-        outline: 3px solid;
 
-        &__time{
+        &__time {
             margin-bottom: 10px;
         }
 
-        & i{
+        & i {
             font-size: 25px;
             transition: 300ms;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.1);
                 transition: 300ms;
             }
@@ -172,7 +177,46 @@
     }
 }
 
-#playSong{
+.reset{
+    color: white;
+    font-family: songs;
+    font-size: 20px;
+    position: absolute;
+    bottom: -35%;
+    transition: 300ms;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover{
+        transform: scale(1.1);
+        transition: 300ms;
+    }
+}
+
+#playSong {
     margin: 0 30px 0 35px;
     font-size: 34px;
+}
+
+
+
+.circular-chart {
+    width: 225px;
+    height: 225px;
+    position: absolute;
+    z-index: -1;
+}
+
+.circle {
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 0.3;
+    stroke-linecap: round;
+    animation: progress 1500s linear forwards reverse paused;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
 }
