@@ -25,6 +25,7 @@ let bars = document.querySelector(".bars");
 let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI", "SATUR"];
 let monthList = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
+
 let toastify = Toastify({
     text: "tab to undo",
     close: true,

@@ -7,12 +7,14 @@
     <title>todo list</title>
     <link rel="stylesheet" href="./assets/css/main.min.css?v=2.3">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./assets/js/main.js" defer></script>
     <script src="./assets/js/docks.js" defer></script>
     <script src="./assets/js/notes.js" defer></script>
     <script src="./assets/js/focus.js" defer></script>
     <script src="./assets/js/theme.js" defer></script>
+   
 </head>
 
 <body class="theme-1">
@@ -40,7 +42,18 @@
     <section class="tasks">
 
 
-        <div class="focusScreen dnone"></div>
+        <div class="focusScreen dnone">
+            <div class="focusScreen__player">
+                <i class="fa-solid fa-backward-step"></i>
+                <i class="fa-solid fa-play" id="playSong"></i>
+                <i class="fa-solid fa-forward-step"></i>
+            </div>
+            <div class="focusScreen__timer">
+                <p class="focusScreen__timer__time"><span class="minute">25</span>:<span class="second">00</span>
+                </p>
+                <i class="fa-solid fa-play" id="playTimer"></i>
+            </div>
+        </div>
 
 
 

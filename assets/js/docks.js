@@ -36,8 +36,7 @@ function changeToNotes() {
 
 
     notesListRender()
-
-    appName.textContent = "my notes"
+    appName.textContent = "my notes";
 
 }
 

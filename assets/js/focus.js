@@ -1,8 +1,12 @@
 
 let screen = document.querySelector(".focusScreen");
+let playTimer = document.getElementById("playTimer");
+let playSong = document.getElementById("playSong");
+let minute = document.querySelector(".minute")
+let second = document.querySelector(".second");
 
 
-function focusToolsRender(){
+function focusToolsRender() {
     toolsBox.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" class="close tools__svg" onclick="closeTools()"
     viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
     <path
@@ -56,6 +60,52 @@ function focusToolsRender(){
 
 
 
-function play(id){
+function play(id) {
     screen.style.backgroundImage = `url(/assets/images/${id}.gif)`
 }
+
+
+let interval;
+
+function playStateHandler(whichPlay) {
+    whichPlay.classList.toggle("fa-pause");
+    whichPlay.classList.toggle("fa-play");
+    if (whichPlay == playTimer) {
+        let classArr = [...whichPlay.classList];
+        if(classArr.includes("fa-pause")){
+            interval= setInterval(timer , 1000);
+        }
+        else
+        clearInterval(interval)
+    }
+}
+
+
+
+function timer() {
+    let sec = second.textContent;
+    let min = minute.textContent;
+    if (sec === "00") {
+        second.textContent = "59";
+        minute.textContent = +min - 1;
+        minute.textContent= minute.textContent.padStart(2,"0");
+        
+    } else {
+        second.textContent = +sec - 1;
+        second.textContent = second.textContent.padStart(2,"0");
+    }
+}
+
+
+
+
+
+
+
+
+playTimer.addEventListener("click", function () {
+    playStateHandler(playTimer)
+})
+playSong.addEventListener("click", function () {
+    playStateHandler(playSong)
+})
