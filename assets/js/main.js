@@ -348,7 +348,6 @@ donebtn.addEventListener("click", change)
 bars.addEventListener("click", function () {
     document.querySelector(".tools").classList.add("open")
 })
-// closebtn.addEventListener("click", closeTools)
 
 
 
