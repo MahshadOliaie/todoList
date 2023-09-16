@@ -220,3 +220,13 @@
         stroke-dasharray: 0 100;
     }
 }
+
+
+.disabled{
+    color: gray;
+    pointer-events: none;
+    &:hover {
+        color: gray;
+        transform: scale(1);
+    }
+}

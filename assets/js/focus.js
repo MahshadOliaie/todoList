@@ -5,7 +5,12 @@ let playSong = document.getElementById("playSong");
 let minute = document.querySelector(".minute")
 let reset = document.querySelector(".reset");
 let second = document.querySelector(".second");
-
+let currentSong = document.getElementById("s-focus-1");
+let interval;
+let currentID = "focus-1";
+let nextSong = document.getElementById("nextSong");
+let previousSong = document.getElementById("previousSong");
+let songContainers = []
 
 function focusToolsRender() {
     toolsBox.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" class="close tools__svg" onclick="closeTools()"
@@ -57,13 +62,26 @@ function focusToolsRender() {
         </div>
     </div>
 </section>`
+
+    songContainers = [...document.querySelectorAll(".tools__focus__song")]
 }
 
 
-let currentSong = document.getElementById("s-focus-1")
+
 function play(id) {
+    previousSong.classList.remove("disabled")
+    nextSong.classList.remove("disabled")
+    
     screen.style.backgroundImage = `url(/assets/images/${id}.gif)`;
-    if(currentSong){
+    currentID = id;
+    if (currentID == "focus-1") {
+        previousSong.classList.add("disabled")
+    }
+    if(currentID=="focus-6"){
+        nextSong.classList.add("disabled")
+    }
+
+    if (currentSong) {
         currentSong.autoplay = false;
         currentSong.load();
     }
@@ -76,7 +94,7 @@ function play(id) {
 }
 
 
-let interval;
+
 
 function playStateHandler(whichPlay) {
     whichPlay.classList.toggle("fa-pause");
@@ -94,7 +112,7 @@ function playStateHandler(whichPlay) {
 
     }
 
-    if(whichPlay == playSong){
+    if (whichPlay == playSong) {
         if (classArr.includes("fa-pause")) {
             currentSong.autoplay = true;
             currentSong.load();
@@ -148,3 +166,26 @@ playSong.addEventListener("click", function () {
     playStateHandler(playSong)
 })
 reset.addEventListener("click", resetfn);
+
+
+previousSong.addEventListener("click", function () {
+    if (currentID !== "focus-1") {
+        let index = songContainers.map((item, index) => {
+            if (item.id == currentID) {
+                return index - 1;
+            }
+        }).join("");
+        play(songContainers[index].id)
+    }
+})
+
+nextSong.addEventListener("click", function () {
+    if (currentID !== "focus-6") {
+        let index = songContainers.map((item, index) => {
+            if (item.id == currentID) {
+                return index + 1;
+            }
+        }).join("");
+        play(songContainers[index].id)
+    }
+})

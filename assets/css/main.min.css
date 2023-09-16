@@ -1904,4 +1904,13 @@ body {
   0% {
     stroke-dasharray: 0 100;
   }
+}
+.disabled {
+  color: gray;
+  pointer-events: none;
+}
+.disabled:hover {
+  color: gray;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }/*# sourceMappingURL=main.min.css.map */
