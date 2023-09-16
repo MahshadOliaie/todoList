@@ -14,10 +14,10 @@ let titlebox = document.querySelector(".notes__header input");
 let noteBody = document.getElementById("text");
 let focusSong = document.querySelector(".tools__focus");
 let focusScreen = document.querySelector(".focusScreen");
+let appName = document.querySelector(".appName")
 
 
 function changeToNotes() {
-    debugger
     selected = document.querySelector(".selected");
     selected.classList.remove("selected");
     notesBtn.classList.add("selected");
@@ -28,7 +28,6 @@ function changeToNotes() {
     notesList = document.querySelector(".notesList")
     notesHeader.classList.remove("dnone");
     search.classList.add("dnone");
-    focusSong.classList.add("dnone");
     focusScreen.classList.add("dnone");
 
     if (myNotes.length == 0) {
@@ -37,6 +36,8 @@ function changeToNotes() {
 
 
     notesListRender()
+
+    appName.textContent = "my notes"
 
 }
 
@@ -52,6 +53,7 @@ function changeToFocus() {
     focusToolsRender()
     notesHeader.classList.add("dnone");
     focusScreen.classList.remove("dnone");
+    appName.textContent = "deef focus"
 
 
 }
@@ -66,9 +68,9 @@ function changeToTodo() {
     callTodo();
     todoBtn.classList.add("selected")
     search.classList.remove("dnone");
-    focusSong.classList.add("dnone");
     focusScreen.classList.add("dnone");
     callThemes();
+    appName.textContent = "my todo list"
 }
 
 

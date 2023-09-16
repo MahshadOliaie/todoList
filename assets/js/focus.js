@@ -1,4 +1,6 @@
 
+let screen = document.querySelector(".focusScreen");
+
 
 function focusToolsRender(){
     toolsBox.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" class="close tools__svg" onclick="closeTools()"
@@ -8,46 +10,52 @@ function focusToolsRender(){
 </svg>
 <section class="tools__focus">
     <div class="songContainer">
-        <div class="tools__focus__song" id="focus-1">
+        <div class="tools__focus__song" id="focus-1" onclick="play('focus-1')" onclick="play('focus-1')">
             <div class="tools__focus__song__layer">
                 <p class="tools__focus__song__layer__title">lake</p>
             </div>
         </div>
     </div>
     <div class="songContainer">
-        <div class="tools__focus__song" id="focus-2">
+        <div class="tools__focus__song" id="focus-2" onclick="play('focus-2')">
             <div class="tools__focus__song__layer">
                 <p class="tools__focus__song__layer__title">fire</p>
             </div>
         </div>
     </div>
     <div class="songContainer">
-        <div class="tools__focus__song" id="focus-3">
+        <div class="tools__focus__song" id="focus-3" onclick="play('focus-3')">
             <div class="tools__focus__song__layer">
                 <p class="tools__focus__song__layer__title">forest</p>
             </div>
         </div>
     </div>
     <div class="songContainer">
-        <div class="tools__focus__song" id="focus-4">
+        <div class="tools__focus__song" id="focus-4" onclick="play('focus-4')">
             <div class="tools__focus__song__layer">
                 <p class="tools__focus__song__layer__title">rain</p>
             </div>
         </div>
     </div>
     <div class="songContainer">
-        <div class="tools__focus__song" id="focus-5">
+        <div class="tools__focus__song" id="focus-5" onclick="play('focus-5')">
             <div class="tools__focus__song__layer">
                 <p class="tools__focus__song__layer__title">city</p>
             </div>
         </div>
     </div>
     <div class="songContainer">
-        <div class="tools__focus__song" id="focus-6">
+        <div class="tools__focus__song" id="focus-6" onclick="play('focus-6')">
             <div class="tools__focus__song__layer">
                 <p class="tools__focus__song__layer__title">waterfall</p>
             </div>
         </div>
     </div>
 </section>`
+}
+
+
+
+function play(id){
+    screen.style.backgroundImage = `url(/assets/images/${id}.gif)`
 }
