@@ -34,12 +34,10 @@ function changeToNotes() {
         Container.innerHTML = " ";
     }
 
-
     notesListRender()
     appName.textContent = "my notes";
 
 }
-
 
 
 
@@ -52,7 +50,8 @@ function changeToFocus() {
     focusToolsRender()
     notesHeader.classList.add("dnone");
     focusScreen.classList.remove("dnone");
-    appName.textContent = "deef focus"
+    appName.textContent = "deep focus"
+    resetfn()
 
 
 }

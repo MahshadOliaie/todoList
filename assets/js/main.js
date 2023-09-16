@@ -79,7 +79,7 @@ function add() {
 
 
 function done(item, index) {
-    debugger
+
     document.getElementById(`check${item}`).classList.toggle("done");
 
     doneTasks = [...document.querySelectorAll(".done")];
@@ -291,7 +291,7 @@ function date() {
 
 
 function editName() {
-    debugger
+
     name = document.querySelector(".tools__account__name")
     let newName = prompt("Enter your name", username);
     username = newName;

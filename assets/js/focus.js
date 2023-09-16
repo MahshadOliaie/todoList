@@ -71,13 +71,13 @@ function focusToolsRender() {
 function play(id) {
     previousSong.classList.remove("disabled")
     nextSong.classList.remove("disabled")
-    
+
     screen.style.backgroundImage = `url(/assets/images/${id}.gif)`;
     currentID = id;
     if (currentID == "focus-1") {
         previousSong.classList.add("disabled")
     }
-    if(currentID=="focus-6"){
+    if (currentID == "focus-6") {
         nextSong.classList.add("disabled")
     }
 

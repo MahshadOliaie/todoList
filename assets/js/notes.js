@@ -2,7 +2,7 @@
 
 
 function renderNotesTools() {
-    debugger
+
     toolsBox.innerHTML = ` <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="close tools__svg" onclick="closeTools()"
     viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
     <path
@@ -22,7 +22,7 @@ function renderNotesTools() {
 
 
 function addNote() {
-    debugger
+
     (myNotes.length == 0) ? myNotes.push({ "id": (myNotes.length + 1), "title": "", "body": "" }) : myNotes.push({ "id": ((myNotes[(myNotes.length - 1)].id) + 1), "title": "", "body": "" });
     localStorage.setItem("notes", JSON.stringify(myNotes));
     currentNote = myNotes[(myNotes.length - 1)].id;
@@ -34,7 +34,7 @@ function addNote() {
 
 
 function addNoteRender() {
-    debugger
+
     notesListRender();
 
     if (myNotes.length == 0) {
@@ -47,7 +47,7 @@ function addNoteRender() {
 
 
 function notesListRender() {
-debugger
+    debugger
     let template = myNotes.map((item, index) => {
         return `<div class="notesList__body__note ${(item.id == currentNote) ? 'currentNote' : ''}" onclick="openNote(${item.id},${index})" id="${item.id}">
         <h2>${item.title}</h2>
@@ -65,7 +65,7 @@ debugger
 function openNote(id) {
     document.querySelector(".currentNote").classList.remove("currentNote");
     currentNote = id;
-    localStorage.setItem("current" , JSON.stringify(currentNote));
+    localStorage.setItem("current", JSON.stringify(currentNote));
     document.getElementById(id).classList.add("currentNote");
     document.querySelector(".tools").classList.remove("open");
     renderNotes();
@@ -90,7 +90,7 @@ function changeTitle() {
 
 
 function changeBody() {
-    debugger
+
     noteBody = document.getElementById("text");
     let value = noteBody.value;
     let index = myNotes.map((item, index) => {
@@ -108,12 +108,12 @@ function changeBody() {
 
 
 function renderNotes() {
-    debugger
+
     let index = myNotes.map((item, index) => {
         if (item.id == currentNote)
             return index;
     }).join("")
-    
+
     titlebox.value = myNotes[index].title;
     Container.innerHTML = `<textarea name="text" id="text" cols="30" rows="10" class="note" placeholder="write here..." onkeyup="changeBody()">${myNotes[index].body}</textarea>`
 }

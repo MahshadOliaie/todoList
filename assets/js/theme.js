@@ -7,7 +7,6 @@ let currentBg = JSON.parse(localStorage.getItem("bg")) || "bg-1";
 
 
 function changeTheme(id) {
-    debugger
     document.getElementById(currentTheme).classList.remove("current")
     document.getElementById(currentBg).classList.remove("current")
     document.getElementById(currentBg).classList.add("current")
