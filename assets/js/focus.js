@@ -60,9 +60,19 @@ function focusToolsRender() {
 }
 
 
-
+let currentSong = document.getElementById("s-focus-1")
 function play(id) {
-    screen.style.backgroundImage = `url(/assets/images/${id}.gif)`
+    screen.style.backgroundImage = `url(/assets/images/${id}.gif)`;
+    if(currentSong){
+        currentSong.autoplay = false;
+        currentSong.load();
+    }
+    let song = document.getElementById(`s-${id}`);
+    currentSong = song;
+    song.autoplay = true;
+    song.load();
+    playSong.classList.add("fa-pause")
+    playSong.classList.remove("fa-play")
 }
 
 
@@ -71,8 +81,8 @@ let interval;
 function playStateHandler(whichPlay) {
     whichPlay.classList.toggle("fa-pause");
     whichPlay.classList.toggle("fa-play");
+    let classArr = [...whichPlay.classList];
     if (whichPlay == playTimer) {
-        let classArr = [...whichPlay.classList];
         if (classArr.includes("fa-pause")) {
             interval = setInterval(timer, 1000);
             document.querySelector(".circle").style.animationPlayState = "running"
@@ -82,6 +92,17 @@ function playStateHandler(whichPlay) {
             document.querySelector(".circle").style.animationPlayState = "paused"
         }
 
+    }
+
+    if(whichPlay == playSong){
+        if (classArr.includes("fa-pause")) {
+            currentSong.autoplay = true;
+            currentSong.load();
+        }
+        else {
+            currentSong.autoplay = false;
+            currentSong.load();
+        }
     }
 }
 
@@ -109,9 +130,9 @@ function resetfn() {
     clearInterval(interval);
     playTimer.classList.add("fa-play");
     playTimer.classList.remove("fa-pause");
-    document.querySelector(".circle").style.animation="none";
+    document.querySelector(".circle").style.animation = "none";
     setTimeout(() => {
-        document.querySelector(".circle").style.animation="progress 1500s linear forwards reverse paused";
+        document.querySelector(".circle").style.animation = "progress 1500s linear forwards reverse paused";
     }, 100);
 }
 
