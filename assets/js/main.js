@@ -19,7 +19,7 @@ let deleted = [];
 let deletedDoneTasks = [];
 let closebtn = document.querySelector(".close");
 let name;
-let profileImg = JSON.parse(localStorage.getItem("profileImg")) || "../images/human.jpeg"
+let profileImg = JSON.parse(localStorage.getItem("profileImg")) || "/assets/images/human.jpeg"
 let username = JSON.parse(localStorage.getItem("username")) || "your name";
 let bars = document.querySelector(".bars");
 let dayList = ["SUN", "MON", "TUES", "WEDNS", "THURS", "FRI", "SATUR"];
