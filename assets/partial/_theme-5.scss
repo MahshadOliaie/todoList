@@ -171,6 +171,12 @@
 
             &__svg {
                 fill: $pink-5;
+                &:hover {
+
+                    @media screen and (max-width:950px) {
+                        fill: $pink-5;
+                    }
+                }
             }
         }
 

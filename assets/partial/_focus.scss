@@ -129,15 +129,6 @@
         justify-content: center;
         font-size: 30px;
 
-        & i {
-            transition: 300ms;
-
-            &:hover {
-                color: rgb(161, 161, 161);
-                transform: scale(1.1);
-                transition: 300ms;
-            }
-        }
     }
 
 

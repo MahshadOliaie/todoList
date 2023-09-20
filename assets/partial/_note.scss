@@ -1,6 +1,4 @@
-
-
-.tasks__body textarea{
+.tasks__body textarea {
     width: 100%;
     max-width: 100%;
     height: 100%;
@@ -8,20 +6,21 @@
     background-color: transparent;
     font-size: 20px;
     padding: 20px;
-    &:focus-visible{
+
+    &:focus-visible {
         outline: none;
     }
 
 }
 
-.notesList{
+.notesList {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 200;
     overflow: scroll;
 
-    &__header{
+    &__header {
         width: 100%;
         height: 60px;
         position: sticky;
@@ -31,21 +30,27 @@
         justify-content: space-around;
         align-items: center;
 
-         &__svg{
+        &__svg {
             font-size: 20px;
             transition: 300ms;
-            &:hover{
+
+            &:hover {
                 fill: rgba(255, 255, 255, 0.837);
                 transform: scale(1.1);
                 transition: 300ms;
+
+
+                @media screen and (max-width:950px) {
+                    transform: scale(1);
+                }
             }
-         }
+        }
     }
 
-    &__body{
+    &__body {
         margin: 5px 0;
 
-        &__note{
+        &__note {
             margin: 0 auto;
             width: 95%;
             height: 60px;
@@ -58,18 +63,18 @@
             overflow: hidden;
         }
     }
-    
+
 }
 
 
-.notes__header{
+.notes__header {
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     z-index: 400;
 
-    &__title{
+    &__title {
         width: 100%;
         height: 100%;
         padding: 0 20%;
@@ -77,13 +82,12 @@
         background-color: transparent;
         border: none;
 
-        &::placeholder{
+        &::placeholder {
             color: rgba(0, 0, 0, 0.403);
         }
-        &:focus-visible{
+
+        &:focus-visible {
             outline: none;
         }
     }
 }
-
-

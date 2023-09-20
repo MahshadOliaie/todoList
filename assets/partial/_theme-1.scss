@@ -162,6 +162,13 @@
 
             &__svg {
                 fill: $orange;
+
+                &:hover {
+
+                    @media screen and (max-width:950px) {
+                        fill: $orange;
+                    }
+                }
             }
         }
 

@@ -1004,6 +1004,11 @@ body {
 .theme-1 .notesList__header__svg {
   fill: #FC7F00;
 }
+@media screen and (max-width: 950px) {
+  .theme-1 .notesList__header__svg:hover {
+    fill: #FC7F00;
+  }
+}
 .theme-1 .notesList__body__note {
   border-bottom: 2px solid rgba(0, 0, 0, 0.389);
 }
@@ -1128,6 +1133,11 @@ body {
 }
 .theme-2 .notesList__header__svg {
   fill: #FF8E2B;
+}
+@media screen and (max-width: 950px) {
+  .theme-2 .notesList__header__svg:hover {
+    fill: #FF8E2B;
+  }
 }
 .theme-2 .notesList__body__note {
   border-bottom: 2px solid #0D2137;
@@ -1260,6 +1270,11 @@ body {
 .theme-3 .notesList__header__svg {
   fill: #0CCA4A;
 }
+@media screen and (max-width: 950px) {
+  .theme-3 .notesList__header__svg:hover {
+    fill: #0CCA4A;
+  }
+}
 .theme-3 .notesList__body__note {
   border-bottom: 2px solid #6E8387;
 }
@@ -1390,6 +1405,11 @@ body {
 }
 .theme-4 .notesList__header__svg {
   fill: #F3DE8A;
+}
+@media screen and (max-width: 950px) {
+  .theme-4 .notesList__header__svg:hover {
+    fill: #F3DE8A;
+  }
 }
 .theme-4 .notesList__body__note {
   border-bottom: 2px solid #7A7A94;
@@ -1526,6 +1546,11 @@ body {
 .theme-5 .notesList__header__svg {
   fill: #8d2663;
 }
+@media screen and (max-width: 950px) {
+  .theme-5 .notesList__header__svg:hover {
+    fill: #8d2663;
+  }
+}
 .theme-5 .notesList__body__note {
   border-bottom: 2px solid #8d2663;
 }
@@ -1605,6 +1630,12 @@ body {
           transform: scale(1.1);
   -webkit-transition: 300ms;
   transition: 300ms;
+}
+@media screen and (max-width: 950px) {
+  .notesList__header__svg:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 .notesList__body {
   margin: 5px 0;
@@ -1800,17 +1831,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 30px;
-}
-.focusScreen__player i {
-  -webkit-transition: 300ms;
-  transition: 300ms;
-}
-.focusScreen__player i:hover {
-  color: rgb(161, 161, 161);
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 300ms;
-  transition: 300ms;
 }
 .focusScreen__timer {
   position: absolute;

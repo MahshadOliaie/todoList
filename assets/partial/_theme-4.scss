@@ -168,6 +168,12 @@
 
             &__svg {
                 fill: $yellow-4;
+                &:hover {
+
+                    @media screen and (max-width:950px) {
+                        fill: $yellow-4;
+                    }
+                }
             }
         }
 
